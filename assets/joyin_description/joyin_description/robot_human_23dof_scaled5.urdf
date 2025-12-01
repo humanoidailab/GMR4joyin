@@ -1,0 +1,1671 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="bvh_human_3dof_tpose">
+  <mujoco>
+    <compiler meshdir="meshes" fusestatic="false" discardvisual="false" strippath="false" balanceinertia="true" />
+  </mujoco>
+  <link name="world"><inertial><origin xyz="0 0 0" rpy="0 0 0" /><mass value="0.1" /><inertia ixx="4e-06" ixy="0" ixz="0" iyy="4e-06" iyz="0" izz="4e-06" /></inertial></link>
+  <joint name="floating_base_joint" type="floating">
+    <parent link="world" />
+    <child link="Hips" />
+  </joint>
+  <link name="Hips">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.1" />
+      <inertia ixx="2.5e-05" ixy="0" ixz="0" iyy="2.5e-05" iyz="0" izz="2.5e-05" />
+    </inertial>
+    <visual>
+      <geometry>
+        <sphere radius="0.025" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0.025" />
+      </geometry>
+    </collision>
+  
+
+    <collision>
+
+      <geometry>
+        <sphere radius="0.025" />
+      </geometry>
+
+    </collision></link>
+  <link name="LeftUpLeg_rz">
+    <inertial>
+      <origin xyz="0 0 -0.05" rpy="0 0 0" />
+      <mass value="0.5" />
+      <inertia ixx="0.0001922" ixy="0" ixz="0" iyy="0.0001922" iyz="0" izz="0.0001922" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.05" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.031" length="0.05" />
+      </geometry>
+    </visual>
+  
+
+    <collision>
+
+      <origin xyz="0 0 -0.05" rpy="0 0 0" />
+
+      <geometry>
+        <cylinder radius="0.031" length="0.05" />
+      </geometry>
+
+    </collision></link>
+  <link name="LeftUpLeg_ry">
+    <inertial>
+      <origin xyz="0 0.0 0" rpy="0 0 0" />
+      <mass value="0.4" />
+      <inertia ixx="0.00011664" ixy="0" ixz="0" iyy="0.00011664" iyz="0" izz="0.00011664" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0.0 0" rpy="-1.5707963 0 0" />
+      <geometry>
+        <cylinder radius="0.027" length="0.048" />
+      </geometry>
+    </visual>
+  
+
+    <collision>
+
+      <origin xyz="0 0.0 0" rpy="-1.5707963 0 0" />
+
+      <geometry>
+        <cylinder radius="0.027" length="0.048" />
+      </geometry>
+
+    </collision></link>
+  <link name="LeftUpLeg">
+    <inertial>
+      <origin xyz="0.08 0 0" rpy="0 0 0" />
+      <mass value="0.4" />
+      <inertia ixx="0.0016" ixy="0" ixz="0" iyy="0.0016" iyz="0" izz="0.0016" />
+    </inertial>
+    <visual>
+      <origin xyz="0.1 -0 -0" rpy="0 1.57 0" />
+      <geometry>
+        <cylinder radius="0.01" length="0.2" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.08 0 0" rpy="0 1.5707963 0" />
+      <geometry>
+        <cylinder radius="0.027" length="0.048" />
+      </geometry>
+    </visual>
+  
+
+   
+
+    <collision>
+
+      <origin xyz="0.08 0 0" rpy="0 1.5707963 0" />
+
+      <geometry>
+        <cylinder radius="0.027" length="0.048" />
+      </geometry>
+
+    </collision></link>
+  <joint name="Hips_to_LeftUpLeg_rz" type="revolute">
+    <parent link="Hips" />
+    <child link="LeftUpLeg_rz" />
+    <origin xyz="0.00051729 0.0092891 0.05274253" rpy="0 0 -3.1415927" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14159" upper="3.14159" effort="55" velocity="10" />
+  </joint>
+  <joint name="LeftUpLeg_rz_to_LeftUpLeg_ry" type="revolute">
+    <parent link="LeftUpLeg_rz" />
+    <child link="LeftUpLeg_ry" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="25" velocity="10" />
+  </joint>
+  <joint name="LeftUpLeg_ry_to_LeftUpLeg" type="revolute">
+    <parent link="LeftUpLeg_ry" />
+    <child link="LeftUpLeg" />
+    <origin xyz="0 0 0" rpy="3.1415927 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="25" velocity="10" />
+  </joint>
+  <link name="LeftLeg_rz">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.5" />
+      <inertia ixx="0.0001922" ixy="0" ixz="0" iyy="0.0001922" iyz="0" izz="0.0001922" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.031" length="0.05" />
+      </geometry>
+    </visual>
+  
+
+    <collision>
+
+      <origin xyz="0 0 0" rpy="0 0 0" />
+
+      <geometry>
+        <cylinder radius="0.031" length="0.05" />
+      </geometry>
+
+    </collision></link>
+  <link name="LeftLeg_ry">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+  </link>
+  <link name="LeftLeg">
+    <inertial>
+      <origin xyz="0.1 0 0" rpy="0 0 0" />
+      <mass value="0.8" />
+      <inertia ixx="0.0032" ixy="0" ixz="0" iyy="0.0032" iyz="0" izz="0.0032" />
+    </inertial>
+    <visual>
+      <origin xyz="0.1 -0 -0" rpy="0 1.57 0" />
+      <geometry>
+        <cylinder radius="0.01" length="0.2" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.1 -0 -0" rpy="0 1.57 0" />
+      <geometry>
+        <sphere radius="0.03" />
+      </geometry>
+    </visual>
+  
+
+   
+
+    <collision>
+
+      <origin xyz="0.1 -0 -0" rpy="0 1.57 0" />
+
+      <geometry>
+        <sphere radius="0.03" />
+      </geometry>
+
+    </collision></link>
+  <joint name="LeftUpLeg_to_LeftLeg_rz" type="revolute">
+    <parent link="LeftUpLeg" />
+    <child link="LeftLeg_rz" />
+    <origin xyz="0.2175 -0.0000001 0.00000001" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14159" upper="3.14159" effort="55" velocity="10" />
+  </joint>
+  <joint name="LeftLeg_rz_to_LeftLeg_ry" type="fixed">
+    <parent link="LeftLeg_rz" />
+    <child link="LeftLeg_ry" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="LeftLeg_ry_to_LeftLeg" type="fixed">
+    <parent link="LeftLeg_ry" />
+    <child link="LeftLeg" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <link name="LeftFoot_rz">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="1.6e-06" ixy="0" ixz="0" iyy="1.6e-06" iyz="0" izz="1.6e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.005" length="0.04" />
+      </geometry>
+    </visual>
+  
+
+  </link>
+  <link name="LeftFoot_ry">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+  </link>
+  <link name="LeftFoot">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="1.96e-05" ixy="0" ixz="0" iyy="1.96e-05" iyz="0" izz="1.96e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0.02 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.14 0.02 0.05" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5707963 0" />
+      <geometry>
+        <cylinder radius="0.005" length="0.04" />
+      </geometry>
+    </visual>
+  
+
+    <collision>
+
+      <origin xyz="0.02 0 0" rpy="0 0 0" />
+
+      <geometry>
+        <box size="0.14 0.02 0.05" />
+      </geometry>
+
+    </collision>
+
+  </link>
+  <joint name="LeftLeg_to_LeftFoot_rz" type="revolute">
+    <parent link="LeftLeg" />
+    <child link="LeftFoot_rz" />
+    <origin xyz="0.211861 -0.00000002 0.00000001" rpy="0 0 1.5707963" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14159" upper="3.14159" effort="50" velocity="10" />
+  </joint>
+  <joint name="LeftFoot_rz_to_LeftFoot_ry" type="fixed">
+    <parent link="LeftFoot_rz" />
+    <child link="LeftFoot_ry" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="LeftFoot_ry_to_LeftFoot" type="revolute">
+    <parent link="LeftFoot_ry" />
+    <child link="LeftFoot" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="50" velocity="10" />
+  </joint>
+  <link name="LeftToe_rz">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+  </link>
+  <link name="LeftToe_ry">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+  </link>
+  <link name="LeftToe">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+    <visual>
+      <geometry>
+        <sphere radius="0.01" />
+      </geometry>
+    </visual>
+  
+
+    <collision>
+
+      <geometry>
+        <sphere radius="0.01" />
+      </geometry>
+
+    </collision></link>
+  <joint name="LeftFoot_to_LeftToe_rz" type="fixed">
+    <parent link="LeftFoot" />
+    <child link="LeftToe_rz" />
+    <origin xyz="0.08650004 0.00000001 0.00000003" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="LeftToe_rz_to_LeftToe_ry" type="fixed">
+    <parent link="LeftToe_rz" />
+    <child link="LeftToe_ry" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="LeftToe_ry_to_LeftToe" type="fixed">
+    <parent link="LeftToe_ry" />
+    <child link="LeftToe" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <link name="LeftToe_End">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+    <visual>
+      <geometry>
+        <sphere radius="0.01" />
+      </geometry>
+    </visual>
+  
+
+    <collision>
+
+      <geometry>
+        <sphere radius="0.01" />
+      </geometry>
+
+    </collision></link>
+  <joint name="LeftToe_to_LeftToe_End" type="fixed">
+    <parent link="LeftToe" />
+    <child link="LeftToe_End" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+  
+
+  <link name="RightUpLeg_rz">
+    <inertial>
+      <origin xyz="0 0 0.05" rpy="0 0 0" />
+      <mass value="0.5" />
+      <inertia ixx="0.0001922" ixy="0" ixz="0" iyy="0.0001922" iyz="0" izz="0.0001922" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.05" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.031" length="0.05" />
+      </geometry>
+    </visual>
+  
+
+    <collision>
+
+      <origin xyz="0 0 0.05" rpy="0 0 0" />
+
+      <geometry>
+        <cylinder radius="0.031" length="0.05" />
+      </geometry>
+
+    </collision></link>
+  <link name="RightUpLeg_ry">
+    <inertial>
+      <origin xyz="0 0.0 0" rpy="0 0 0" />
+      <mass value="0.4" />
+      <inertia ixx="0.00011664" ixy="0" ixz="0" iyy="0.00011664" iyz="0" izz="0.00011664" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0.0 0" rpy="-1.5707963 0 0" />
+      <geometry>
+        <cylinder radius="0.027" length="0.048" />
+      </geometry>
+    </visual>
+  
+
+    <collision>
+
+      <origin xyz="0 0.0 0" rpy="-1.5707963 0 0" />
+
+      <geometry>
+        <cylinder radius="0.027" length="0.048" />
+      </geometry>
+
+    </collision></link>
+  <link name="RightUpLeg">
+    <inertial>
+      <origin xyz="0.08 0 0" rpy="0 0 0" />
+      <mass value="0.4" />
+      <inertia ixx="0.0016" ixy="0" ixz="0" iyy="0.0016" iyz="0" izz="0.0016" />
+    </inertial>
+    <visual>
+      <origin xyz="0.1 -0 -0" rpy="0 1.57 0" />
+      <geometry>
+        <cylinder radius="0.01" length="0.2" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.08 0 0" rpy="0 1.5707963 0" />
+      <geometry>
+        <cylinder radius="0.027" length="0.048" />
+      </geometry>
+    </visual>
+  
+
+   
+
+    <collision>
+
+      <origin xyz="0.08 0 0" rpy="0 1.5707963 0" />
+
+      <geometry>
+        <cylinder radius="0.027" length="0.048" />
+      </geometry>
+
+    </collision></link>
+  <joint name="Hips_to_RightUpLeg_rz" type="revolute">
+    <parent link="Hips" />
+    <child link="RightUpLeg_rz" />
+    <origin xyz="0.00051729 0.00928909 -0.05274252" rpy="0 0 -3.1415927" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="RightUpLeg_rz_to_RightUpLeg_ry" type="revolute">
+    <parent link="RightUpLeg_rz" />
+    <child link="RightUpLeg_ry" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="RightUpLeg_ry_to_RightUpLeg" type="revolute">
+    <parent link="RightUpLeg_ry" />
+    <child link="RightUpLeg" />
+    <origin xyz="0 0 0" rpy="-3.1415927 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <link name="RightLeg_rz">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.5" />
+      <inertia ixx="0.0001922" ixy="0" ixz="0" iyy="0.0001922" iyz="0" izz="0.0001922" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.031" length="0.05" />
+      </geometry>
+    </visual>
+  
+
+    <collision>
+
+      <origin xyz="0 0 0" rpy="0 0 0" />
+
+      <geometry>
+        <cylinder radius="0.031" length="0.05" />
+      </geometry>
+
+    </collision></link>
+  <link name="RightLeg_ry">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+  </link>
+  <link name="RightLeg">
+    <inertial>
+      <origin xyz="0.1 0 0" rpy="0 0 0" />
+      <mass value="0.8" />
+      <inertia ixx="0.0032" ixy="0" ixz="0" iyy="0.0032" iyz="0" izz="0.0032" />
+    </inertial>
+    <visual>
+      <origin xyz="0.1 -0 -0" rpy="0 1.57 0" />
+      <geometry>
+        <cylinder radius="0.01" length="0.2" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.1 -0 -0" rpy="0 1.57 0" />
+      <geometry>
+        <sphere radius="0.03" />
+      </geometry>
+    </visual>
+  
+
+   
+
+    <collision>
+
+      <origin xyz="0.1 -0 -0" rpy="0 1.57 0" />
+
+      <geometry>
+        <sphere radius="0.03" />
+      </geometry>
+
+    </collision></link>
+  <joint name="RightUpLeg_to_RightLeg_rz" type="revolute">
+    <parent link="RightUpLeg" />
+    <child link="RightLeg_rz" />
+    <origin xyz="0.21750021 -0.00000007 0.00000005" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="RightLeg_rz_to_RightLeg_ry" type="fixed">
+    <parent link="RightLeg_rz" />
+    <child link="RightLeg_ry" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="RightLeg_ry_to_RightLeg" type="fixed">
+    <parent link="RightLeg_ry" />
+    <child link="RightLeg" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <link name="RightFoot_rz">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="1.6e-06" ixy="0" ixz="0" iyy="1.6e-06" iyz="0" izz="1.6e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.005" length="0.04" />
+      </geometry>
+    </visual>
+  
+
+  </link>
+  <link name="RightFoot_ry">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+  </link>
+  <link name="RightFoot">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="1.96e-05" ixy="0" ixz="0" iyy="1.96e-05" iyz="0" izz="1.96e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0.02 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.14 0.02 0.05" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5707963 0" />
+      <geometry>
+        <cylinder radius="0.005" length="0.04" />
+      </geometry>
+    </visual>
+  
+
+    <collision>
+
+      <origin xyz="0.02 0 0" rpy="0 0 0" />
+
+      <geometry>
+        <box size="0.14 0.02 0.05" />
+      </geometry>
+
+    </collision>
+
+  </link>
+  <joint name="RightLeg_to_RightFoot_rz" type="revolute">
+    <parent link="RightLeg" />
+    <child link="RightFoot_rz" />
+    <origin xyz="0.2118613 -0.00000004 0.00000005" rpy="0 0 1.5707963" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="RightFoot_rz_to_RightFoot_ry" type="fixed">
+    <parent link="RightFoot_rz" />
+    <child link="RightFoot_ry" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="RightFoot_ry_to_RightFoot" type="revolute">
+    <parent link="RightFoot_ry" />
+    <child link="RightFoot" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <link name="RightToe_rz">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+  </link>
+  <link name="RightToe_ry">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+  </link>
+  <link name="RightToe">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+    <visual>
+      <geometry>
+        <sphere radius="0.01" />
+      </geometry>
+    </visual>
+  
+
+    <collision>
+
+      <geometry>
+        <sphere radius="0.01" />
+      </geometry>
+
+    </collision></link>
+  <joint name="RightFoot_to_RightToe_rz" type="fixed">
+    <parent link="RightFoot" />
+    <child link="RightToe_rz" />
+    <origin xyz="0.08649998 -0.00000002 0" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="RightToe_rz_to_RightToe_ry" type="fixed">
+    <parent link="RightToe_rz" />
+    <child link="RightToe_ry" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="RightToe_ry_to_RightToe" type="fixed">
+    <parent link="RightToe_ry" />
+    <child link="RightToe" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <link name="RightToe_End">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+    <visual>
+      <geometry>
+        <sphere radius="0.01" />
+      </geometry>
+    </visual>
+  
+
+    <collision>
+
+      <geometry>
+        <sphere radius="0.01" />
+      </geometry>
+
+    </collision></link>
+  <joint name="RightToe_to_RightToe_End" type="fixed">
+    <parent link="RightToe" />
+    <child link="RightToe_End" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+  
+
+  
+
+  <link name="Spine_rz">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+  </link>
+  <link name="Spine_ry">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+  </link>
+  <link name="Spine">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.4" />
+      <inertia ixx="1.6e-05" ixy="0" ixz="0" iyy="1.6e-05" iyz="0" izz="1.6e-05" />
+    </inertial>
+    <visual>
+      <geometry>
+        <sphere radius="0.01" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5707963 0" />
+      <geometry>
+        <cylinder radius="0.027" length="0.048" />
+      </geometry>
+    </visual>
+  
+
+    <collision>
+
+      <geometry>
+        <sphere radius="0.01" />
+      </geometry>
+
+    </collision>
+
+    <collision>
+
+      <origin xyz="0 0 0" rpy="0 1.5707963 0" />
+
+      <geometry>
+        <cylinder radius="0.027" length="0.048" />
+      </geometry>
+
+    </collision></link>
+  <joint name="Hips_to_Spine_rz" type="fixed">
+    <parent link="Hips" />
+    <child link="Spine_rz" />
+    <origin xyz="0.03450984 -0.01301872 0.00000001" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="Spine_rz_to_Spine_ry" type="fixed">
+    <parent link="Spine_rz" />
+    <child link="Spine_ry" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="Spine_ry_to_Spine" type="revolute">
+    <parent link="Spine_ry" />
+    <child link="Spine" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+
+  <link name="Spine1_rz">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.4" />
+      <inertia ixx="0.00011664" ixy="0" ixz="0" iyy="0.00011664" iyz="0" izz="0.00011664" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.027" length="0.048" />
+      </geometry>
+    </visual>
+  
+
+    <collision>
+
+      <origin xyz="0 0 0" rpy="0 0 0" />
+
+      <geometry>
+        <cylinder radius="0.027" length="0.048" />
+      </geometry>
+
+    </collision></link>
+  <link name="Spine1_ry">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.4" />
+      <inertia ixx="0.00011664" ixy="0" ixz="0" iyy="0.00011664" iyz="0" izz="0.00011664" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="-1.5707963 0 0" />
+      <geometry>
+        <cylinder radius="0.027" length="0.048" />
+      </geometry>
+    </visual>
+  
+
+    <collision>
+
+      <origin xyz="0 0 0" rpy="-1.5707963 0 0" />
+
+      <geometry>
+        <cylinder radius="0.027" length="0.048" />
+      </geometry>
+
+    </collision></link>
+  <link name="Spine1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+    <visual>
+      <geometry>
+        <sphere radius="0.01" />
+      </geometry>
+    </visual>
+  
+
+    <collision>
+
+      <geometry>
+        <sphere radius="0.01" />
+      </geometry>
+
+    </collision></link>
+  <joint name="Spine_to_Spine1_rz" type="revolute">
+    <parent link="Spine" />
+    <child link="Spine1_rz" />
+    <origin xyz="0.0629405 0.00000008 -0.00000002" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="Spine1_rz_to_Spine1_ry" type="revolute">
+    <parent link="Spine1_rz" />
+    <child link="Spine1_ry" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="Spine1_ry_to_Spine1" type="fixed">
+    <parent link="Spine1_ry" />
+    <child link="Spine1" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+
+  <link name="Spine2_rz">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+  </link>
+  <link name="Spine2_ry">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+  </link>
+  <link name="Spine2">
+    <inertial>
+      <origin xyz="0.05 0 0" rpy="0 0 0" />
+      <mass value="2.01" />
+      <inertia ixx="2.56e-05" ixy="0" ixz="0" iyy="2.56e-05" iyz="0" izz="2.56e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0.05 0.0 0.00" rpy="0 1.57 0" />
+      <geometry>
+        <box size="0.1 0.08 0.16" />
+      </geometry>
+    </visual>
+  
+
+    <collision>
+
+      <origin xyz="0.05 0.0 0.00" rpy="0 1.57 0" />
+
+      <geometry>
+        <box size="0.1 0.08 0.16" />
+      </geometry>
+
+    </collision></link>
+  <joint name="Spine1_to_Spine2_rz" type="fixed">
+    <parent link="Spine1" />
+    <child link="Spine2_rz" />
+    <origin xyz="0.061716 -0.00000006 -0.00000002" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="Spine2_rz_to_Spine2_ry" type="fixed">
+    <parent link="Spine2_rz" />
+    <child link="Spine2_ry" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="Spine2_ry_to_Spine2" type="fixed">
+    <parent link="Spine2_ry" />
+    <child link="Spine2" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+
+  <link name="Neck_rz">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+  </link>
+  <link name="Neck_ry">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+  </link>
+  <link name="Neck">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+    <visual>
+      <geometry>
+        <sphere radius="0.01" />
+      </geometry>
+    </visual>
+  
+
+    <collision>
+
+      <geometry>
+        <sphere radius="0.01" />
+      </geometry>
+
+    </collision></link>
+  <joint name="Spine2_to_Neck_rz" type="fixed">
+    <parent link="Spine2" />
+    <child link="Neck_rz" />
+    <origin xyz="0.12916448 0.00000004 0.00000003" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="Neck_rz_to_Neck_ry" type="fixed">
+    <parent link="Neck_rz" />
+    <child link="Neck_ry" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="Neck_ry_to_Neck" type="fixed">
+    <parent link="Neck_ry" />
+    <child link="Neck" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+
+  <link name="Head_rz">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+  </link>
+  <link name="Head_ry">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+  </link>
+  <link name="Head">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="3.6e-06" ixy="0" ixz="0" iyy="3.6e-06" iyz="0" izz="3.6e-06" />
+    </inertial>
+    <visual>
+      <geometry>
+        <sphere radius="0.03" />
+      </geometry>
+    </visual>
+  
+
+    <collision>
+
+      <geometry>
+        <sphere radius="0.03" />
+      </geometry>
+
+    </collision></link>
+  <joint name="Neck_to_Head_rz" type="fixed">
+    <parent link="Neck" />
+    <child link="Head_rz" />
+    <origin xyz="0.05883306 -0.00000002 -0.00000001" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="Head_rz_to_Head_ry" type="fixed">
+    <parent link="Head_rz" />
+    <child link="Head_ry" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.14159" upper="-3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="Head_ry_to_Head" type="fixed">
+    <parent link="Head_ry" />
+    <child link="Head" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+
+  <link name="Head_End">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+    <visual>
+      <geometry>
+        <sphere radius="0.01" />
+      </geometry>
+    </visual>
+  
+
+    <collision>
+
+      <geometry>
+        <sphere radius="0.01" />
+      </geometry>
+
+    </collision></link>
+  <joint name="Head_to_Head_End" type="fixed">
+    <parent link="Head" />
+    <child link="Head_End" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+  
+
+  <link name="LeftShoulder_rz">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+  </link>
+  <link name="LeftShoulder_ry">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+  </link>
+  <link name="LeftShoulder">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="2.5e-06" ixy="0" ixz="0" iyy="2.5e-06" iyz="0" izz="2.5e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0.025 -0 -0" rpy="0 1.57 0" />
+      <geometry>
+        <cylinder radius="0.005" length="0.05" />
+      </geometry>
+    </visual>
+  
+
+  </link>
+  <joint name="Spine2_to_LeftShoulder_rz" type="fixed">
+    <parent link="Spine2" />
+    <child link="LeftShoulder_rz" />
+    <origin xyz="0.09872949 -0.00740185 0.03000058" rpy="0 0 -1.5707963" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="LeftShoulder_rz_to_LeftShoulder_ry" type="fixed">
+    <parent link="LeftShoulder_rz" />
+    <child link="LeftShoulder_ry" />
+    <origin xyz="0 0 0" rpy="0 -1.5707963 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="LeftShoulder_ry_to_LeftShoulder" type="fixed">
+    <parent link="LeftShoulder_ry" />
+    <child link="LeftShoulder" />
+    <origin xyz="0 0 0" rpy="-1.5707963 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+
+  <link name="LeftArm_rz">
+    <inertial>
+      <origin xyz="0 0 0.04" rpy="0 0 0" />
+      <mass value="0.3" />
+      <inertia ixx="5.292e-05" ixy="0" ixz="0" iyy="5.292e-05" iyz="0" izz="5.292e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.04" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.021" length="0.041" />
+      </geometry>
+    </visual>
+  
+
+    <collision>
+
+      <origin xyz="0 0 0.04" rpy="0 0 0" />
+
+      <geometry>
+        <cylinder radius="0.021" length="0.041" />
+      </geometry>
+
+    </collision></link>
+  <link name="LeftArm_ry">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.3" />
+      <inertia ixx="5.292e-05" ixy="0" ixz="0" iyy="5.292e-05" iyz="0" izz="5.292e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="-1.5707963 0 0" />
+      <geometry>
+        <cylinder radius="0.021" length="0.041" />
+      </geometry>
+    </visual>
+  
+
+    <collision>
+
+      <origin xyz="0 0 0" rpy="-1.5707963 0 0" />
+
+      <geometry>
+        <cylinder radius="0.021" length="0.041" />
+      </geometry>
+
+    </collision></link>
+  <link name="LeftArm">
+    <inertial>
+      <origin xyz="0.04 0 0" rpy="0 0 0" />
+      <mass value="0.3" />
+      <inertia ixx="0.000675" ixy="0" ixz="0" iyy="0.000675" iyz="0" izz="0.000675" />
+    </inertial>
+    <visual>
+      <origin xyz="0.075 -0 -0" rpy="0 1.57 0" />
+      <geometry>
+        <cylinder radius="0.005" length="0.15" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.04 0.0 0" rpy="0 1.5707963 0" />
+      <geometry>
+        <cylinder radius="0.021" length="0.041" />
+      </geometry>
+    </visual>
+  
+
+  
+
+    <collision>
+
+      <origin xyz="0.04 0.0 0" rpy="0 1.5707963 0" />
+
+      <geometry>
+        <cylinder radius="0.021" length="0.041" />
+      </geometry>
+
+    </collision></link>
+  <joint name="LeftShoulder_to_LeftArm_rz" type="revolute">
+    <parent link="LeftShoulder" />
+    <child link="LeftArm_rz" />
+    <origin xyz="0.05642062 -0.00000006 -0.00000004" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="LeftArm_rz_to_LeftArm_ry" type="revolute">
+    <parent link="LeftArm_rz" />
+    <child link="LeftArm_ry" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="LeftArm_ry_to_LeftArm" type="revolute">
+    <parent link="LeftArm_ry" />
+    <child link="LeftArm" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+
+  <link name="LeftForeArm_rz">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.3" />
+      <inertia ixx="5.292e-05" ixy="0" ixz="0" iyy="5.292e-05" iyz="0" izz="5.292e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.021" length="0.041" />
+      </geometry>
+    </visual>
+  
+
+    <collision>
+
+      <origin xyz="0 0 0" rpy="0 0 0" />
+
+      <geometry>
+        <cylinder radius="0.021" length="0.041" />
+      </geometry>
+
+    </collision></link>
+  <link name="LeftForeArm_ry">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+  </link>
+  <link name="LeftForeArm">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="1e-05" ixy="0" ixz="0" iyy="1e-05" iyz="0" izz="1e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0.05 -0 -0" rpy="0 1.57 0" />
+      <geometry>
+        <cylinder radius="0.005" length="0.1" />
+      </geometry>
+    </visual>
+  
+
+ </link>
+  <joint name="LeftArm_to_LeftForeArm_rz" type="revolute">
+    <parent link="LeftArm" />
+    <child link="LeftForeArm_rz" />
+    <origin xyz="0.16500023 0.00000001 0.00000011" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="LeftForeArm_rz_to_LeftForeArm_ry" type="fixed">
+    <parent link="LeftForeArm_rz" />
+    <child link="LeftForeArm_ry" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="LeftForeArm_ry_to_LeftForeArm" type="fixed">
+    <parent link="LeftForeArm_ry" />
+    <child link="LeftForeArm" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+
+  <link name="LeftHand_rz">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+  </link>
+  <link name="LeftHand_ry">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+  </link>
+  <link name="LeftHand">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+    <visual>
+      <geometry>
+        <sphere radius="0.01" />
+      </geometry>
+    </visual>
+  
+
+    <collision>
+
+      <geometry>
+        <sphere radius="0.01" />
+      </geometry>
+
+    </collision></link>
+  <joint name="LeftForeArm_to_LeftHand_rz" type="fixed">
+    <parent link="LeftForeArm" />
+    <child link="LeftHand_rz" />
+    <origin xyz="0.12600007 0.00000003 0.00000007" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="LeftHand_rz_to_LeftHand_ry" type="fixed">
+    <parent link="LeftHand_rz" />
+    <child link="LeftHand_ry" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="LeftHand_ry_to_LeftHand" type="fixed">
+    <parent link="LeftHand_ry" />
+    <child link="LeftHand" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+
+  <link name="LeftHand_End">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+    <visual>
+      <geometry>
+        <sphere radius="0.01" />
+      </geometry>
+    </visual>
+  
+
+    <collision>
+
+      <geometry>
+        <sphere radius="0.01" />
+      </geometry>
+
+    </collision></link>
+  <joint name="LeftHand_to_LeftHand_End" type="fixed">
+    <parent link="LeftHand" />
+    <child link="LeftHand_End" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+  
+
+  <link name="RightShoulder_rz">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+  </link>
+  <link name="RightShoulder_ry">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+  </link>
+  <link name="RightShoulder">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="2.5e-06" ixy="0" ixz="0" iyy="2.5e-06" iyz="0" izz="2.5e-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0.025 -0 -0" rpy="0 1.57 0" />
+      <geometry>
+        <cylinder radius="0.005" length="0.05" />
+      </geometry>
+    </visual>
+  
+
+  </link>
+  <joint name="Spine2_to_RightShoulder_rz" type="fixed">
+    <parent link="Spine2" />
+    <child link="RightShoulder_rz" />
+    <origin xyz="0.0987305 -0.00740189 -0.03000034" rpy="0 0 1.5707963" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="RightShoulder_rz_to_RightShoulder_ry" type="fixed">
+    <parent link="RightShoulder_rz" />
+    <child link="RightShoulder_ry" />
+    <origin xyz="0 0 0" rpy="0 1.5707963 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="RightShoulder_ry_to_RightShoulder" type="fixed">
+    <parent link="RightShoulder_ry" />
+    <child link="RightShoulder" />
+    <origin xyz="0 0 0" rpy="-1.5707963 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+
+  <link name="RightArm_rz">
+    <inertial>
+      <origin xyz="0 0 -0.04" rpy="0 0 0" />
+      <mass value="0.3" />
+      <inertia ixx="5.292e-05" ixy="0" ixz="0" iyy="5.292e-05" iyz="0" izz="5.292e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -0.04" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.021" length="0.041" />
+      </geometry>
+    </visual>
+  
+
+    <collision>
+
+      <origin xyz="0 0 -0.04" rpy="0 0 0" />
+
+      <geometry>
+        <cylinder radius="0.021" length="0.041" />
+      </geometry>
+
+    </collision></link>
+  <link name="RightArm_ry">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.3" />
+      <inertia ixx="5.292e-05" ixy="0" ixz="0" iyy="5.292e-05" iyz="0" izz="5.292e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="-1.5707963 0 0" />
+      <geometry>
+        <cylinder radius="0.021" length="0.041" />
+      </geometry>
+    </visual>
+  
+
+    <collision>
+
+      <origin xyz="0 0 0" rpy="-1.5707963 0 0" />
+
+      <geometry>
+        <cylinder radius="0.021" length="0.041" />
+      </geometry>
+
+    </collision></link>
+  <link name="RightArm">
+    <inertial>
+      <origin xyz="0.04 0 0" rpy="0 0 0" />
+      <mass value="0.3" />
+      <inertia ixx="0.000675" ixy="0" ixz="0" iyy="0.000675" iyz="0" izz="0.000675" />
+    </inertial>
+    <visual>
+      <origin xyz="0.075 -0 -0" rpy="0 1.57 0" />
+      <geometry>
+        <cylinder radius="0.005" length="0.15" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.04 0.0 0" rpy="0 1.5707963 0" />
+      <geometry>
+        <cylinder radius="0.021" length="0.041" />
+      </geometry>
+    </visual>
+  
+
+  
+
+    <collision>
+
+      <origin xyz="0.04 0.0 0" rpy="0 1.5707963 0" />
+
+      <geometry>
+        <cylinder radius="0.021" length="0.041" />
+      </geometry>
+
+    </collision></link>
+  <joint name="RightShoulder_to_RightArm_rz" type="revolute">
+    <parent link="RightShoulder" />
+    <child link="RightArm_rz" />
+    <origin xyz="0.05642067 -0.00000017 -0.00000004" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="RightArm_rz_to_RightArm_ry" type="revolute">
+    <parent link="RightArm_rz" />
+    <child link="RightArm_ry" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="RightArm_ry_to_RightArm" type="revolute">
+    <parent link="RightArm_ry" />
+    <child link="RightArm" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+
+  <link name="RightForeArm_rz">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.3" />
+      <inertia ixx="5.292e-05" ixy="0" ixz="0" iyy="5.292e-05" iyz="0" izz="5.292e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.021" length="0.041" />
+      </geometry>
+    </visual>
+  
+
+    <collision>
+
+      <origin xyz="0 0 0" rpy="0 0 0" />
+
+      <geometry>
+        <cylinder radius="0.021" length="0.041" />
+      </geometry>
+
+    </collision></link>
+  <link name="RightForeArm_ry">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+  </link>
+  <link name="RightForeArm">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="1e-05" ixy="0" ixz="0" iyy="1e-05" iyz="0" izz="1e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0.05 -0 -0" rpy="0 1.57 0" />
+      <geometry>
+        <cylinder radius="0.005" length="0.1" />
+      </geometry>
+    </visual>
+  
+
+ </link>
+  <joint name="RightArm_to_RightForeArm_rz" type="revolute">
+    <parent link="RightArm" />
+    <child link="RightForeArm_rz" />
+    <origin xyz="0.16500046 0.0000001 0.00000003" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="RightForeArm_rz_to_RightForeArm_ry" type="fixed">
+    <parent link="RightForeArm_rz" />
+    <child link="RightForeArm_ry" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="RightForeArm_ry_to_RightForeArm" type="fixed">
+    <parent link="RightForeArm_ry" />
+    <child link="RightForeArm" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+
+  <link name="RightHand_rz">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+  </link>
+  <link name="RightHand_ry">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+  </link>
+  <link name="RightHand">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+    <visual>
+      <geometry>
+        <sphere radius="0.01" />
+      </geometry>
+    </visual>
+  
+
+    <collision>
+
+      <geometry>
+        <sphere radius="0.01" />
+      </geometry>
+
+    </collision></link>
+  <joint name="RightForeArm_to_RightHand_rz" type="fixed">
+    <parent link="RightForeArm" />
+    <child link="RightHand_rz" />
+    <origin xyz="0.12599888 0.0000007 0.00000216" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="RightHand_rz_to_RightHand_ry" type="fixed">
+    <parent link="RightHand_rz" />
+    <child link="RightHand_ry" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+  <joint name="RightHand_ry_to_RightHand" type="fixed">
+    <parent link="RightHand_ry" />
+    <child link="RightHand" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="10" />
+  </joint>
+
+  <link name="RightHand_End">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia ixx="4e-07" ixy="0" ixz="0" iyy="4e-07" iyz="0" izz="4e-07" />
+    </inertial>
+    <visual>
+      <geometry>
+        <sphere radius="0.01" />
+      </geometry>
+    </visual>
+  
+
+    <collision>
+
+      <geometry>
+        <sphere radius="0.01" />
+      </geometry>
+
+    </collision></link>
+  <joint name="RightHand_to_RightHand_End" type="fixed">
+    <parent link="RightHand" />
+    <child link="RightHand_End" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+</robot>

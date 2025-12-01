@@ -1,0 +1,54 @@
+{
+  "root_pos": [
+    0.0,
+    0.0,
+    0.92
+  ],
+  "root_rot": [
+    0.5,
+    0.5,
+    0.5,
+    0.5
+  ],
+  "degrees": true,
+  "joints": {
+    "left_hip_pitch_joint": 0,
+    "left_hip_roll_joint": 0,
+    "left_hip_yaw_joint": 0,
+    "left_knee_pitch_joint": 0,
+    "left_ankle_pitch_joint": 0,
+    "left_ankle_roll_joint": 0,
+    "right_hip_pitch_joint": 0,
+    "right_hip_roll_joint": 0,
+    "right_hip_yaw_joint": 0,
+    "right_knee_pitch_joint": 0,
+    "right_ankle_pitch_joint": 0,
+    "right_ankle_roll_joint": 0,
+    "waist_yaw_joint": 0,
+    "waist_roll_joint": 0,
+    "waist_pitch_joint": 0,
+    "left_shoulder_pitch_joint": 0,
+    "left_shoulder_roll_joint": 90,
+    "left_shoulder_yaw_joint": 0,
+    "left_elbow_pitch_joint": 90,
+    "right_shoulder_pitch_joint": 0,
+    "right_shoulder_roll_joint": -90,
+    "right_shoulder_yaw_joint": 0,
+    "right_elbow_pitch_joint": 90
+  },
+  "joint_match": {
+    "base_link": "Hips",
+    "left_hip_yaw_link": "LeftUpLeg",
+    "left_knee_pitch_link": "LeftLeg",
+    "left_ankle_roll_link": "LeftFootMod",
+    "right_hip_yaw_link": "RightUpLeg",
+    "right_knee_pitch_link": "RightLeg",
+    "right_ankle_roll_link": "RightFootMod",
+    "waist_pitch_link": "spine2",
+    "left_shoulder_yaw_link": "LeftArm",
+    "left_elbow_pitch_link": "LeftForeArm",
+    "right_shoulder_yaw_link": "RightArm",
+    "right_elbow_pitch_link": "RightForeArm"
+
+  }
+}

@@ -1,0 +1,450 @@
+{
+    "robot_root_name": "Hips",
+    "human_root_name": "Hips",
+  "ground_height": 0.0,
+  "human_height_assumption": 1.8,
+  "use_ik_match_table1": true,
+  "use_ik_match_table2":false,
+  "human_scale_table": {
+    "Hips": 0.5,
+    "Spine2": 1,
+    "LeftUpLeg": 1,
+    "RightUpLeg": 1,
+    "LeftLeg": 1,
+    "RightLeg": 1,
+    "LeftFootMod": 1,
+    "RightFootMod": 1,
+    "LeftArm": 1,
+    "RightArm": 1,
+    "LeftForeArm": 1,
+    "RightForeArm": 1
+  },
+  "collision_pairs": [
+    [["Hips_geom1"], ["floor"]],
+    [["LeftUpLeg_rz_geom1"], ["floor"]],
+    [["LeftUpLeg_ry_geom1"], ["floor"]],
+    [["LeftUpLeg_geom1"], ["floor"]],
+    [["LeftLeg_rz_geom1"], ["floor"]],
+    [["LeftLeg_geom1"], ["floor"]],
+    [["LeftFoot_geom1"], ["floor"]],
+    [["LeftToe_geom1"], ["floor"]],
+    [["LeftToe_End_geom1"], ["floor"]],
+    [["RightUpLeg_rz_geom1"], ["floor"]],
+    [["RightUpLeg_ry_geom1"], ["floor"]],
+    [["RightUpLeg_geom1"], ["floor"]],
+    [["RightLeg_rz_geom1"], ["floor"]],
+    [["RightLeg_geom1"], ["floor"]],
+    [["RightFoot_geom1"], ["floor"]],
+    [["RightToe_geom1"], ["floor"]],
+    [["RightToe_End_geom1"], ["floor"]],
+    [["Spine_geom1"], ["floor"]],
+    [["Spine1_rz_geom1"], ["floor"]],
+    [["Spine1_ry_geom1"], ["floor"]],
+    [["Spine1_geom1"], ["floor"]],
+    [["Spine2_geom1"], ["floor"]],
+    [["Neck_geom1"], ["floor"]],
+    [["Head_geom1"], ["floor"]],
+    [["Head_End_geom1"], ["floor"]],
+    [["LeftArm_rz_geom1"], ["floor"]],
+    [["LeftArm_ry_geom1"], ["floor"]],
+    [["LeftArm_geom1"], ["floor"]],
+    [["LeftForeArm_rz_geom1"], ["floor"]],
+    [["LeftHand_geom1"], ["floor"]],
+    [["LeftHand_End_geom1"], ["floor"]],
+    [["RightArm_rz_geom1"], ["floor"]],
+    [["RightArm_ry_geom1"], ["floor"]],
+    [["RightArm_geom1"], ["floor"]],
+    [["RightForeArm_rz_geom1"], ["floor"]],
+    [["RightHand_geom1"], ["floor"]],
+    [["RightHand_End_geom1"], ["floor"]]
+  ],
+  "ik_match_table1": {
+    "Hips": [
+      "Hips",
+      50,
+      10,
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "LeftUpLeg": [
+      "LeftUpLeg",
+      50,
+      10,
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "LeftLeg": [
+      "LeftLeg",
+      50,
+      10,
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "LeftFoot": [
+      "LeftFootMod",
+      50,
+      10,
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "RightUpLeg": [
+      "RightUpLeg",
+      50,
+      10,
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "RightLeg": [
+      "RightLeg",
+      50,
+      10,
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "RightFoot": [
+      "RightFootMod",
+      50,
+      10,
+      [
+        0.0,
+        -0.0,
+        0.0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "Spine2": [
+      "Spine2",
+      50,
+      10,
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "LeftArm": [
+      "LeftArm",
+      50,
+      10,
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "LeftForeArm": [
+      "LeftForeArm",
+      50,
+      10,
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "RightArm": [
+      "RightArm",
+      50,
+      10,
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "RightForeArm": [
+      "RightForeArm",
+      50,
+      10,
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  "ik_match_table2": {
+    "Hips": [
+      "Hips",
+      100,
+      5,
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "LeftUpLeg": [
+      "LeftUpLeg",
+      5,
+      5,
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "LeftLeg": [
+      "LeftLeg",
+      5,
+      5,
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "LeftFoot": [
+      "LeftFootMod",
+      50,
+      20,
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+         1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "RightUpLeg": [
+      "RightUpLeg",
+      5,
+      5,
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "RightLeg": [
+      "RightLeg",
+      5,
+      5,
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "RightFoot": [
+      "RightFootMod",
+      50,
+      20,
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "Spine2": [
+      "Spine2",
+      3,
+      100,
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "LeftArm": [
+      "LeftArm",
+      10,
+      5,
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "LeftForeArm": [
+      "LeftForeArm",
+      10,
+      5,
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "RightArm": [
+      "RightArm",
+      10,
+      5,
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "RightForeArm": [
+      "RightForeArm",
+      10,
+      5,
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ]
+    ]
+  }
+
+}

@@ -1,0 +1,353 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="bvh_human_3dof_tpose">
+  <compiler angle="radian" meshdir="meshes/" />
+  <worldbody>
+    <body name="Hips">
+      <inertial pos="0 0 0" mass="0.1" diaginertia="2.5e-05 2.5e-05 2.5e-05" />
+      <joint name="floating_base_joint" type="free" />
+      <geom size="0.025" contype="1" conaffinity="1" group="1" density="0" name="Hips" />
+      <geom size="0.025" name="Hips_geom1" />
+      <geom size="0.025" name="Hips_geom2" />
+      <body name="LeftUpLeg_rz" pos="0.00051729 0.0092891 0.0827425" quat="-2.32051e-08 0 0 -1">
+        <inertial pos="0 0 -0.05" mass="0.5" diaginertia="0.0001922 0.0001922 0.0001922" />
+        <joint name="Hips_to_LeftUpLeg_rz" pos="0 0 0" axis="0 0 1" range="-3.14159 3.14159" actuatorfrcrange="-55 55" />
+        <geom size="0.031 0.025" pos="0 0 -0.05" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="LeftUpLeg_rz" />
+        <geom size="0.031 0.025" pos="0 0 -0.05" type="cylinder" name="LeftUpLeg_rz_geom1" />
+        <body name="LeftUpLeg_ry">
+          <inertial pos="0 0 0" mass="0.4" diaginertia="0.00011664 0.00011664 0.00011664" />
+          <joint name="LeftUpLeg_rz_to_LeftUpLeg_ry" pos="0 0 0" axis="0 1 0" range="-3.14159 3.14159" actuatorfrcrange="-25 25" />
+          <geom size="0.027 0.024" quat="0.707107 -0.707107 0 0" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="LeftUpLeg_ry" />
+          <geom size="0.027 0.024" quat="0.707107 -0.707107 0 0" type="cylinder" name="LeftUpLeg_ry_geom1" />
+          <body name="LeftUpLeg" quat="-2.32051e-08 1 0 0">
+            <inertial pos="0.08 0 0" mass="0.4" diaginertia="0.0016 0.0016 0.0016" />
+            <joint name="LeftUpLeg_ry_to_LeftUpLeg" pos="0 0 0" axis="1 0 0" range="-3.14159 3.14159" actuatorfrcrange="-25 25" />
+            <geom size="0.01 0.1" pos="0.1 0 0" quat="0.707388 0 0.706825 0" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="LeftUpLeg" />
+            <geom size="0.027 0.024" pos="0.08 0 0" quat="0.707107 0 0.707107 0" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="LeftUpLeg_geom1" />
+            <geom size="0.027 0.024" pos="0.08 0 0" quat="0.707107 0 0.707107 0" type="cylinder" name="LeftUpLeg_geom2" />
+            <body name="LeftLeg_rz" pos="0.2175 -1e-07 1e-08">
+              <inertial pos="0 0 0" mass="0.5" diaginertia="0.0001922 0.0001922 0.0001922" />
+              <joint name="LeftUpLeg_to_LeftLeg_rz" pos="0 0 0" axis="0 0 1" range="-3.14159 3.14159" actuatorfrcrange="-55 55" />
+              <geom size="0.031 0.025" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="LeftLeg_rz" />
+              <geom size="0.031 0.025" type="cylinder" name="LeftLeg_rz_geom1" />
+              <body name="LeftLeg_ry">
+                <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                <body name="LeftLeg">
+                  <inertial pos="0.1 0 0" mass="0.8" diaginertia="0.0032 0.0032 0.0032" />
+                  <geom size="0.01 0.1" pos="0.1 0 0" quat="0.707388 0 0.706825 0" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="LeftLeg" />
+                  <geom size="0.03" pos="0.1 0 0" quat="0.707388 0 0.706825 0" contype="1" conaffinity="1" group="1" density="0" name="LeftLeg_geom1" />
+                  <geom size="0.03" pos="0.1 0 0" quat="0.707388 0 0.706825 0" name="LeftLeg_geom2" />
+                  <body name="LeftFoot_rz" pos="0.211861 -2e-08 1e-08" quat="0.707107 0 0 0.707107">
+                    <inertial pos="0 0 0" mass="0.01" diaginertia="1.6e-06 1.6e-06 1.6e-06" />
+                    <joint name="LeftLeg_to_LeftFoot_rz" pos="0 0 0" axis="0 0 1" range="-3.14159 3.14159" actuatorfrcrange="-50 50" />
+                    <geom size="0.005 0.02" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="LeftFoot_rz" />
+                    <body name="LeftFoot_ry">
+                      <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                      <body name="LeftFoot">
+                        <inertial pos="0 0 0" mass="0.01" diaginertia="1.96e-05 1.96e-05 1.96e-05" />
+                        <joint name="LeftFoot_ry_to_LeftFoot" pos="0 0 0" axis="1 0 0" range="-3.14159 3.14159" actuatorfrcrange="-50 50" />
+                        <geom size="0.07 0.01 0.025" pos="0.02 0 0" type="box" contype="1" conaffinity="1" group="1" density="0" name="LeftFoot" />
+                        <geom size="0.005 0.02" quat="0.707107 0 0.707107 0" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="LeftFoot_geom1" />
+                        <geom size="0.07 0.01 0.025" pos="0.02 0 0" type="box" name="LeftFoot_geom2" />
+                        <body name="LeftToe_rz" pos="0.0865 1e-08 3e-08">
+                          <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                          <body name="LeftToe_ry">
+                            <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                            <body name="LeftToe">
+                              <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                              <geom size="0.01" contype="1" conaffinity="1" group="1" density="0" name="LeftToe" />
+                              <geom size="0.01" name="LeftToe_geom1" />
+                              <body name="LeftToe_End">
+                                <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                                <geom size="0.01" contype="1" conaffinity="1" group="1" density="0" name="LeftToe_End" />
+                                <geom size="0.01" name="LeftToe_End_geom1" />
+                              </body>
+                            </body>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="RightUpLeg_rz" pos="0.00051729 0.00928909 -0.0827425" quat="-2.32051e-08 0 0 -1">
+        <inertial pos="0 0 0.05" mass="0.5" diaginertia="0.0001922 0.0001922 0.0001922" />
+        <joint name="Hips_to_RightUpLeg_rz" pos="0 0 0" axis="0 0 1" range="-3.14159 3.14159" actuatorfrcrange="-100 100" />
+        <geom size="0.031 0.025" pos="0 0 0.05" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="RightUpLeg_rz" />
+        <geom size="0.031 0.025" pos="0 0 0.05" type="cylinder" name="RightUpLeg_rz_geom1" />
+        <body name="RightUpLeg_ry">
+          <inertial pos="0 0 0" mass="0.4" diaginertia="0.00011664 0.00011664 0.00011664" />
+          <joint name="RightUpLeg_rz_to_RightUpLeg_ry" pos="0 0 0" axis="0 1 0" range="-3.14159 3.14159" actuatorfrcrange="-100 100" />
+          <geom size="0.027 0.024" quat="0.707107 -0.707107 0 0" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="RightUpLeg_ry" />
+          <geom size="0.027 0.024" quat="0.707107 -0.707107 0 0" type="cylinder" name="RightUpLeg_ry_geom1" />
+          <body name="RightUpLeg" quat="-2.32051e-08 -1 0 0">
+            <inertial pos="0.08 0 0" mass="0.4" diaginertia="0.0016 0.0016 0.0016" />
+            <joint name="RightUpLeg_ry_to_RightUpLeg" pos="0 0 0" axis="1 0 0" range="-3.14159 3.14159" actuatorfrcrange="-100 100" />
+            <geom size="0.01 0.1" pos="0.1 0 0" quat="0.707388 0 0.706825 0" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="RightUpLeg" />
+            <geom size="0.027 0.024" pos="0.08 0 0" quat="0.707107 0 0.707107 0" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="RightUpLeg_geom1" />
+            <geom size="0.027 0.024" pos="0.08 0 0" quat="0.707107 0 0.707107 0" type="cylinder" name="RightUpLeg_geom2" />
+            <body name="RightLeg_rz" pos="0.2175 -7e-08 5e-08">
+              <inertial pos="0 0 0" mass="0.5" diaginertia="0.0001922 0.0001922 0.0001922" />
+              <joint name="RightUpLeg_to_RightLeg_rz" pos="0 0 0" axis="0 0 1" range="-3.14159 3.14159" actuatorfrcrange="-100 100" />
+              <geom size="0.031 0.025" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="RightLeg_rz" />
+              <geom size="0.031 0.025" type="cylinder" name="RightLeg_rz_geom1" />
+              <body name="RightLeg_ry">
+                <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                <body name="RightLeg">
+                  <inertial pos="0.1 0 0" mass="0.8" diaginertia="0.0032 0.0032 0.0032" />
+                  <geom size="0.01 0.1" pos="0.1 0 0" quat="0.707388 0 0.706825 0" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="RightLeg" />
+                  <geom size="0.03" pos="0.1 0 0" quat="0.707388 0 0.706825 0" contype="1" conaffinity="1" group="1" density="0" name="RightLeg_geom1" />
+                  <geom size="0.03" pos="0.1 0 0" quat="0.707388 0 0.706825 0" name="RightLeg_geom2" />
+                  <body name="RightFoot_rz" pos="0.211861 -4e-08 5e-08" quat="0.707107 0 0 0.707107">
+                    <inertial pos="0 0 0" mass="0.01" diaginertia="1.6e-06 1.6e-06 1.6e-06" />
+                    <joint name="RightLeg_to_RightFoot_rz" pos="0 0 0" axis="0 0 1" range="-3.14159 3.14159" actuatorfrcrange="-100 100" />
+                    <geom size="0.005 0.02" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="RightFoot_rz" />
+                    <body name="RightFoot_ry">
+                      <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                      <body name="RightFoot">
+                        <inertial pos="0 0 0" mass="0.01" diaginertia="1.96e-05 1.96e-05 1.96e-05" />
+                        <joint name="RightFoot_ry_to_RightFoot" pos="0 0 0" axis="1 0 0" range="-3.14159 3.14159" actuatorfrcrange="-100 100" />
+                        <geom size="0.07 0.01 0.025" pos="0.02 0 0" type="box" contype="1" conaffinity="1" group="1" density="0" name="RightFoot" />
+                        <geom size="0.005 0.02" quat="0.707107 0 0.707107 0" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="RightFoot_geom1" />
+                        <geom size="0.07 0.01 0.025" pos="0.02 0 0" type="box" name="RightFoot_geom2" />
+                        <body name="RightToe_rz" pos="0.0865 -2e-08 0">
+                          <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                          <body name="RightToe_ry">
+                            <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                            <body name="RightToe">
+                              <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                              <geom size="0.01" contype="1" conaffinity="1" group="1" density="0" name="RightToe" />
+                              <geom size="0.01" name="RightToe_geom1" />
+                              <body name="RightToe_End">
+                                <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                                <geom size="0.01" contype="1" conaffinity="1" group="1" density="0" name="RightToe_End" />
+                                <geom size="0.01" name="RightToe_End_geom1" />
+                              </body>
+                            </body>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="Spine_rz" pos="0.0345098 -0.0130187 1e-08">
+        <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+        <body name="Spine_ry">
+          <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+          <body name="Spine">
+            <inertial pos="0 0 0" mass="0.4" diaginertia="1.6e-05 1.6e-05 1.6e-05" />
+            <joint name="Spine_ry_to_Spine" pos="0 0 0" axis="1 0 0" range="-3.14159 3.14159" actuatorfrcrange="-100 100" />
+            <geom size="0.01" contype="1" conaffinity="1" group="1" density="0" name="Spine" />
+            <geom size="0.027 0.024" quat="0.707107 0 0.707107 0" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="Spine_geom1" />
+            <geom size="0.01" name="Spine_geom2" />
+            <geom size="0.027 0.024" quat="0.707107 0 0.707107 0" type="cylinder" name="Spine_geom3" />
+            <body name="Spine1_rz" pos="0.0629405 8e-08 -2e-08">
+              <inertial pos="0 0 0" mass="0.4" diaginertia="0.00011664 0.00011664 0.00011664" />
+              <joint name="Spine_to_Spine1_rz" pos="0 0 0" axis="0 0 1" range="-3.14159 3.14159" actuatorfrcrange="-100 100" />
+              <geom size="0.027 0.024" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="Spine1_rz" />
+              <geom size="0.027 0.024" type="cylinder" name="Spine1_rz_geom1" />
+              <body name="Spine1_ry">
+                <inertial pos="0 0 0" mass="0.4" diaginertia="0.00011664 0.00011664 0.00011664" />
+                <joint name="Spine1_rz_to_Spine1_ry" pos="0 0 0" axis="0 1 0" range="-3.14159 3.14159" actuatorfrcrange="-100 100" />
+                <geom size="0.027 0.024" quat="0.707107 -0.707107 0 0" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="Spine1_ry" />
+                <geom size="0.027 0.024" quat="0.707107 -0.707107 0 0" type="cylinder" name="Spine1_ry_geom1" />
+                <body name="Spine1">
+                  <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                  <geom size="0.01" contype="1" conaffinity="1" group="1" density="0" name="Spine1" />
+                  <geom size="0.01" name="Spine1_geom1" />
+                  <body name="Spine2_rz" pos="0.061716 -6e-08 -2e-08">
+                    <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                    <body name="Spine2_ry">
+                      <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                      <body name="Spine2">
+                        <inertial pos="0.05 0 0" mass="2.01" diaginertia="2.56e-05 2.56e-05 2.56e-05" />
+                        <geom size="0.05 0.04 0.08" pos="0.05 0 0" quat="0.707388 0 0.706825 0" type="box" contype="1" conaffinity="1" group="1" density="0" name="Spine2" />
+                        <geom size="0.05 0.04 0.08" pos="0.05 0 0" quat="0.707388 0 0.706825 0" type="box" name="Spine2_geom1" />
+                        <body name="Neck_rz" pos="0.129164 4e-08 3e-08">
+                          <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                          <body name="Neck_ry">
+                            <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                            <body name="Neck">
+                              <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                              <geom size="0.01" contype="1" conaffinity="1" group="1" density="0" name="Neck" />
+                              <geom size="0.01" name="Neck_geom1" />
+                              <body name="Head_rz" pos="0.0588331 -2e-08 -1e-08">
+                                <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                                <body name="Head_ry">
+                                  <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                                  <body name="Head">
+                                    <inertial pos="0 0 0" mass="0.01" diaginertia="3.6e-06 3.6e-06 3.6e-06" />
+                                    <geom size="0.03" contype="1" conaffinity="1" group="1" density="0" name="Head" />
+                                    <geom size="0.03" name="Head_geom1" />
+                                    <body name="Head_End">
+                                      <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                                      <geom size="0.01" contype="1" conaffinity="1" group="1" density="0" name="Head_End" />
+                                      <geom size="0.01" name="Head_End_geom1" />
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                            </body>
+                          </body>
+                        </body>
+                        <body name="LeftShoulder_rz" pos="0.0987295 -0.00740185 0.0300006" quat="0.707107 0 0 -0.707107">
+                          <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                          <body name="LeftShoulder_ry" quat="0.707107 0 -0.707107 0">
+                            <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                            <body name="LeftShoulder" quat="0.707107 -0.707107 0 0">
+                              <inertial pos="0 0 0" mass="0.01" diaginertia="2.5e-06 2.5e-06 2.5e-06" />
+                              <geom size="0.005 0.025" pos="0.025 0 0" quat="0.707388 0 0.706825 0" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="LeftShoulder" />
+                              <body name="LeftArm_rz" pos="0.0564206 -6e-08 -4e-08">
+                                <inertial pos="0 0 0.04" mass="0.3" diaginertia="5.292e-05 5.292e-05 5.292e-05" />
+                                <joint name="LeftShoulder_to_LeftArm_rz" pos="0 0 0" axis="0 0 1" range="-3.14159 3.14159" actuatorfrcrange="-100 100" />
+                                <geom size="0.021 0.0205" pos="0 0 0.04" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="LeftArm_rz" />
+                                <geom size="0.021 0.0205" pos="0 0 0.04" type="cylinder" name="LeftArm_rz_geom1" />
+                                <body name="LeftArm_ry">
+                                  <inertial pos="0 0 0" mass="0.3" diaginertia="5.292e-05 5.292e-05 5.292e-05" />
+                                  <joint name="LeftArm_rz_to_LeftArm_ry" pos="0 0 0" axis="0 1 0" range="-3.14159 3.14159" actuatorfrcrange="-100 100" />
+                                  <geom size="0.021 0.0205" quat="0.707107 -0.707107 0 0" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="LeftArm_ry" />
+                                  <geom size="0.021 0.0205" quat="0.707107 -0.707107 0 0" type="cylinder" name="LeftArm_ry_geom1" />
+                                  <body name="LeftArm">
+                                    <inertial pos="0.04 0 0" mass="0.3" diaginertia="0.000675 0.000675 0.000675" />
+                                    <joint name="LeftArm_ry_to_LeftArm" pos="0 0 0" axis="1 0 0" range="-3.14159 3.14159" actuatorfrcrange="-100 100" />
+                                    <geom size="0.005 0.075" pos="0.075 0 0" quat="0.707388 0 0.706825 0" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="LeftArm" />
+                                    <geom size="0.021 0.0205" pos="0.04 0 0" quat="0.707107 0 0.707107 0" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="LeftArm_geom1" />
+                                    <geom size="0.021 0.0205" pos="0.04 0 0" quat="0.707107 0 0.707107 0" type="cylinder" name="LeftArm_geom2" />
+                                    <body name="LeftForeArm_rz" pos="0.165 1e-08 1.1e-07">
+                                      <inertial pos="0 0 0" mass="0.3" diaginertia="5.292e-05 5.292e-05 5.292e-05" />
+                                      <joint name="LeftArm_to_LeftForeArm_rz" pos="0 0 0" axis="0 0 1" range="-3.14159 3.14159" actuatorfrcrange="-100 100" />
+                                      <geom size="0.021 0.0205" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="LeftForeArm_rz" />
+                                      <geom size="0.021 0.0205" type="cylinder" name="LeftForeArm_rz_geom1" />
+                                      <body name="LeftForeArm_ry">
+                                        <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                                        <body name="LeftForeArm">
+                                          <inertial pos="0 0 0" mass="0.01" diaginertia="1e-05 1e-05 1e-05" />
+                                          <geom size="0.005 0.05" pos="0.05 0 0" quat="0.707388 0 0.706825 0" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="LeftForeArm" />
+                                          <body name="LeftHand_rz" pos="0.126 3e-08 7e-08">
+                                            <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                                            <body name="LeftHand_ry">
+                                              <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                                              <body name="LeftHand">
+                                                <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                                                <geom size="0.01" contype="1" conaffinity="1" group="1" density="0" name="LeftHand" />
+                                                <geom size="0.01" name="LeftHand_geom1" />
+                                                <body name="LeftHand_End">
+                                                  <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                                                  <geom size="0.01" contype="1" conaffinity="1" group="1" density="0" name="LeftHand_End" />
+                                                  <geom size="0.01" name="LeftHand_End_geom1" />
+                                                </body>
+                                              </body>
+                                            </body>
+                                          </body>
+                                        </body>
+                                      </body>
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                            </body>
+                          </body>
+                        </body>
+                        <body name="RightShoulder_rz" pos="0.0987305 -0.00740189 -0.0300003" quat="0.707107 0 0 0.707107">
+                          <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                          <body name="RightShoulder_ry" quat="0.707107 0 0.707107 0">
+                            <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                            <body name="RightShoulder" quat="0.707107 -0.707107 0 0">
+                              <inertial pos="0 0 0" mass="0.01" diaginertia="2.5e-06 2.5e-06 2.5e-06" />
+                              <geom size="0.005 0.025" pos="0.025 0 0" quat="0.707388 0 0.706825 0" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="RightShoulder" />
+                              <body name="RightArm_rz" pos="0.0564207 -1.7e-07 -4e-08">
+                                <inertial pos="0 0 -0.04" mass="0.3" diaginertia="5.292e-05 5.292e-05 5.292e-05" />
+                                <joint name="RightShoulder_to_RightArm_rz" pos="0 0 0" axis="0 0 1" range="-3.14159 3.14159" actuatorfrcrange="-100 100" />
+                                <geom size="0.021 0.0205" pos="0 0 -0.04" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="RightArm_rz" />
+                                <geom size="0.021 0.0205" pos="0 0 -0.04" type="cylinder" name="RightArm_rz_geom1" />
+                                <body name="RightArm_ry">
+                                  <inertial pos="0 0 0" mass="0.3" diaginertia="5.292e-05 5.292e-05 5.292e-05" />
+                                  <joint name="RightArm_rz_to_RightArm_ry" pos="0 0 0" axis="0 1 0" range="-3.14159 3.14159" actuatorfrcrange="-100 100" />
+                                  <geom size="0.021 0.0205" quat="0.707107 -0.707107 0 0" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="RightArm_ry" />
+                                  <geom size="0.021 0.0205" quat="0.707107 -0.707107 0 0" type="cylinder" name="RightArm_ry_geom1" />
+                                  <body name="RightArm">
+                                    <inertial pos="0.04 0 0" mass="0.3" diaginertia="0.000675 0.000675 0.000675" />
+                                    <joint name="RightArm_ry_to_RightArm" pos="0 0 0" axis="1 0 0" range="-3.14159 3.14159" actuatorfrcrange="-100 100" />
+                                    <geom size="0.005 0.075" pos="0.075 0 0" quat="0.707388 0 0.706825 0" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="RightArm" />
+                                    <geom size="0.021 0.0205" pos="0.04 0 0" quat="0.707107 0 0.707107 0" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="RightArm_geom1" />
+                                    <geom size="0.021 0.0205" pos="0.04 0 0" quat="0.707107 0 0.707107 0" type="cylinder" name="RightArm_geom2" />
+                                    <body name="RightForeArm_rz" pos="0.165 1e-07 3e-08">
+                                      <inertial pos="0 0 0" mass="0.3" diaginertia="5.292e-05 5.292e-05 5.292e-05" />
+                                      <joint name="RightArm_to_RightForeArm_rz" pos="0 0 0" axis="0 0 1" range="-3.14159 3.14159" actuatorfrcrange="-100 100" />
+                                      <geom size="0.021 0.0205" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="RightForeArm_rz" />
+                                      <geom size="0.021 0.0205" type="cylinder" name="RightForeArm_rz_geom1" />
+                                      <body name="RightForeArm_ry">
+                                        <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                                        <body name="RightForeArm">
+                                          <inertial pos="0 0 0" mass="0.01" diaginertia="1e-05 1e-05 1e-05" />
+                                          <geom size="0.005 0.05" pos="0.05 0 0" quat="0.707388 0 0.706825 0" type="cylinder" contype="1" conaffinity="1" group="1" density="0" name="RightForeArm" />
+                                          <body name="RightHand_rz" pos="0.125999 7e-07 2.16e-06">
+                                            <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                                            <body name="RightHand_ry">
+                                              <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                                              <body name="RightHand">
+                                                <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                                                <geom size="0.01" contype="1" conaffinity="1" group="1" density="0" name="RightHand" />
+                                                <geom size="0.01" name="RightHand_geom1" />
+                                                <body name="RightHand_End">
+                                                  <inertial pos="0 0 0" mass="0.01" diaginertia="4e-07 4e-07 4e-07" />
+                                                  <geom size="0.01" contype="1" conaffinity="1" group="1" density="0" name="RightHand_End" />
+                                                  <geom size="0.01" name="RightHand_End_geom1" />
+                                                </body>
+                                              </body>
+                                            </body>
+                                          </body>
+                                        </body>
+                                      </body>
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                            </body>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+    <motor name="Hips_to_LeftUpLeg_rz" joint="Hips_to_LeftUpLeg_rz" gear="1" ctrlrange="-1 1" />
+    <motor name="LeftUpLeg_rz_to_LeftUpLeg_ry" joint="LeftUpLeg_rz_to_LeftUpLeg_ry" gear="1" ctrlrange="-1 1" />
+    <motor name="LeftUpLeg_ry_to_LeftUpLeg" joint="LeftUpLeg_ry_to_LeftUpLeg" gear="1" ctrlrange="-1 1" />
+    <motor name="LeftUpLeg_to_LeftLeg_rz" joint="LeftUpLeg_to_LeftLeg_rz" gear="1" ctrlrange="-1 1" />
+    <motor name="LeftLeg_to_LeftFoot_rz" joint="LeftLeg_to_LeftFoot_rz" gear="1" ctrlrange="-1 1" />
+    <motor name="LeftFoot_ry_to_LeftFoot" joint="LeftFoot_ry_to_LeftFoot" gear="1" ctrlrange="-1 1" />
+    <motor name="Hips_to_RightUpLeg_rz" joint="Hips_to_RightUpLeg_rz" gear="1" ctrlrange="-1 1" />
+    <motor name="RightUpLeg_rz_to_RightUpLeg_ry" joint="RightUpLeg_rz_to_RightUpLeg_ry" gear="1" ctrlrange="-1 1" />
+    <motor name="RightUpLeg_ry_to_RightUpLeg" joint="RightUpLeg_ry_to_RightUpLeg" gear="1" ctrlrange="-1 1" />
+    <motor name="RightUpLeg_to_RightLeg_rz" joint="RightUpLeg_to_RightLeg_rz" gear="1" ctrlrange="-1 1" />
+    <motor name="RightLeg_to_RightFoot_rz" joint="RightLeg_to_RightFoot_rz" gear="1" ctrlrange="-1 1" />
+    <motor name="RightFoot_ry_to_RightFoot" joint="RightFoot_ry_to_RightFoot" gear="1" ctrlrange="-1 1" />
+    <motor name="Spine_ry_to_Spine" joint="Spine_ry_to_Spine" gear="1" ctrlrange="-1 1" />
+    <motor name="Spine_to_Spine1_rz" joint="Spine_to_Spine1_rz" gear="1" ctrlrange="-1 1" />
+    <motor name="Spine1_rz_to_Spine1_ry" joint="Spine1_rz_to_Spine1_ry" gear="1" ctrlrange="-1 1" />
+    <motor name="LeftShoulder_to_LeftArm_rz" joint="LeftShoulder_to_LeftArm_rz" gear="1" ctrlrange="-1 1" />
+    <motor name="LeftArm_rz_to_LeftArm_ry" joint="LeftArm_rz_to_LeftArm_ry" gear="1" ctrlrange="-1 1" />
+    <motor name="LeftArm_ry_to_LeftArm" joint="LeftArm_ry_to_LeftArm" gear="1" ctrlrange="-1 1" />
+    <motor name="LeftArm_to_LeftForeArm_rz" joint="LeftArm_to_LeftForeArm_rz" gear="1" ctrlrange="-1 1" />
+    <motor name="RightShoulder_to_RightArm_rz" joint="RightShoulder_to_RightArm_rz" gear="1" ctrlrange="-1 1" />
+    <motor name="RightArm_rz_to_RightArm_ry" joint="RightArm_rz_to_RightArm_ry" gear="1" ctrlrange="-1 1" />
+    <motor name="RightArm_ry_to_RightArm" joint="RightArm_ry_to_RightArm" gear="1" ctrlrange="-1 1" />
+    <motor name="RightArm_to_RightForeArm_rz" joint="RightArm_to_RightForeArm_rz" gear="1" ctrlrange="-1 1" />
+  </actuator>
+</mujoco>
