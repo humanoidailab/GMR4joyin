@@ -1,0 +1,1031 @@
+<?xml version="1.0"?>
+<robot name="custom_g1_bot">
+  <link name="pelvis">
+    
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-5" ixy="0" ixz="0" iyy="1e-5" iyz="0" izz="1e-5"/>
+    </inertial>
+    
+    
+  </link>
+  <link name="left_hip_pitch_link">
+    
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+      <material name="UnitreeGray"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+    </collision>
+  </link>
+  <joint name="left_hip_pitch_joint" type="revolute">
+    <parent link="pelvis"/>
+    <child link="left_hip_pitch_link"/>
+    <origin xyz="0.009289 0.052743 0.000517" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-3.14" upper="3.14" effort="5.0" velocity="40.0"/>
+  </joint>
+  <transmission name="trans_left_hip_pitch_joint">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_hip_pitch_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint>
+    <actuator name="motor_left_hip_pitch_joint"><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <link name="left_hip_roll_link">
+    
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+      <material name="UnitreeGray"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+    </collision>
+  </link>
+  <joint name="left_hip_roll_joint" type="revolute">
+    <parent link="left_hip_pitch_link"/>
+    <child link="left_hip_roll_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-3.14" upper="3.14" effort="5.0" velocity="40.0"/>
+  </joint>
+  <transmission name="trans_left_hip_roll_joint">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_hip_roll_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint>
+    <actuator name="motor_left_hip_roll_joint"><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <link name="left_hip_yaw_link">
+    
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+      <material name="UnitreeGray"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+    </collision>
+  </link>
+  <joint name="left_hip_yaw_joint" type="revolute">
+    <parent link="left_hip_roll_link"/>
+    <child link="left_hip_yaw_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.14" upper="3.14" effort="5.0" velocity="40.0"/>
+  </joint>
+  <transmission name="trans_left_hip_yaw_joint">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_hip_yaw_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint>
+    <actuator name="motor_left_hip_yaw_joint"><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <link name="left_knee_link">
+    
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+      <material name="UnitreeGray"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+    </collision>
+  </link>
+  <joint name="left_knee_joint" type="revolute">
+    <parent link="left_hip_yaw_link"/>
+    <child link="left_knee_link"/>
+    <origin xyz="-0.0 -0.0 -0.2175" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-3.14" upper="3.14" effort="5.0" velocity="40.0"/>
+  </joint>
+  <transmission name="trans_left_knee_joint">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_knee_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint>
+    <actuator name="motor_left_knee_joint"><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <link name="left_ankle_pitch_link">
+    
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+      <material name="UnitreeGray"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+    </collision>
+  </link>
+  <joint name="left_ankle_pitch_joint" type="revolute">
+    <parent link="left_knee_link"/>
+    <child link="left_ankle_pitch_link"/>
+    <origin xyz="0.0 0.0 -0.211861" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-3.14" upper="3.14" effort="5.0" velocity="40.0"/>
+  </joint>
+  <transmission name="trans_left_ankle_pitch_joint">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_ankle_pitch_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint>
+    <actuator name="motor_left_ankle_pitch_joint"><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <link name="left_ankle_roll_link">
+    
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+      <material name="UnitreeGray"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+    </collision>
+  </link>
+  <joint name="left_ankle_roll_joint" type="revolute">
+    <parent link="left_ankle_pitch_link"/>
+    <child link="left_ankle_roll_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-3.14" upper="3.14" effort="5.0" velocity="40.0"/>
+  </joint>
+  <transmission name="trans_left_ankle_roll_joint">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_ankle_roll_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint>
+    <actuator name="motor_left_ankle_roll_joint"><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <link name="LeftToe_link">
+    
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-5" ixy="0" ixz="0" iyy="1e-5" iyz="0" izz="1e-5"/>
+    </inertial>
+    
+    
+  </link>
+  <joint name="LeftToe_fixed_joint" type="fixed">
+    <parent link="left_ankle_roll_link"/>
+    <child link="LeftToe_link"/>
+    <origin xyz="0.0865 -0.0 0.0" rpy="0 0 0"/>
+    <axis xyz="0 0 0"/>
+    
+  </joint>
+  <link name="right_hip_pitch_link">
+    
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+      <material name="UnitreeGray"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+    </collision>
+  </link>
+  <joint name="right_hip_pitch_joint" type="revolute">
+    <parent link="pelvis"/>
+    <child link="right_hip_pitch_link"/>
+    <origin xyz="0.009289 -0.052743 0.000517" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-3.14" upper="3.14" effort="5.0" velocity="40.0"/>
+  </joint>
+  <transmission name="trans_right_hip_pitch_joint">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_hip_pitch_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint>
+    <actuator name="motor_right_hip_pitch_joint"><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <link name="right_hip_roll_link">
+    
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+      <material name="UnitreeGray"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+    </collision>
+  </link>
+  <joint name="right_hip_roll_joint" type="revolute">
+    <parent link="right_hip_pitch_link"/>
+    <child link="right_hip_roll_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-3.14" upper="3.14" effort="5.0" velocity="40.0"/>
+  </joint>
+  <transmission name="trans_right_hip_roll_joint">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_hip_roll_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint>
+    <actuator name="motor_right_hip_roll_joint"><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <link name="right_hip_yaw_link">
+    
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+      <material name="UnitreeGray"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+    </collision>
+  </link>
+  <joint name="right_hip_yaw_joint" type="revolute">
+    <parent link="right_hip_roll_link"/>
+    <child link="right_hip_yaw_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.14" upper="3.14" effort="5.0" velocity="40.0"/>
+  </joint>
+  <transmission name="trans_right_hip_yaw_joint">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_hip_yaw_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint>
+    <actuator name="motor_right_hip_yaw_joint"><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <link name="right_knee_link">
+    
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+      <material name="UnitreeGray"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+    </collision>
+  </link>
+  <joint name="right_knee_joint" type="revolute">
+    <parent link="right_hip_yaw_link"/>
+    <child link="right_knee_link"/>
+    <origin xyz="-0.0 -0.0 -0.2175" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-3.14" upper="3.14" effort="5.0" velocity="40.0"/>
+  </joint>
+  <transmission name="trans_right_knee_joint">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_knee_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint>
+    <actuator name="motor_right_knee_joint"><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <link name="right_ankle_pitch_link">
+    
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+      <material name="UnitreeGray"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+    </collision>
+  </link>
+  <joint name="right_ankle_pitch_joint" type="revolute">
+    <parent link="right_knee_link"/>
+    <child link="right_ankle_pitch_link"/>
+    <origin xyz="0.0 -0.0 -0.211861" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-3.14" upper="3.14" effort="5.0" velocity="40.0"/>
+  </joint>
+  <transmission name="trans_right_ankle_pitch_joint">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_ankle_pitch_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint>
+    <actuator name="motor_right_ankle_pitch_joint"><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <link name="right_ankle_roll_link">
+    
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+      <material name="UnitreeGray"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+    </collision>
+  </link>
+  <joint name="right_ankle_roll_joint" type="revolute">
+    <parent link="right_ankle_pitch_link"/>
+    <child link="right_ankle_roll_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-3.14" upper="3.14" effort="5.0" velocity="40.0"/>
+  </joint>
+  <transmission name="trans_right_ankle_roll_joint">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_ankle_roll_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint>
+    <actuator name="motor_right_ankle_roll_joint"><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <link name="RightToe_link">
+    
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-5" ixy="0" ixz="0" iyy="1e-5" iyz="0" izz="1e-5"/>
+    </inertial>
+    
+    
+  </link>
+  <joint name="RightToe_fixed_joint" type="fixed">
+    <parent link="right_ankle_roll_link"/>
+    <child link="RightToe_link"/>
+    <origin xyz="0.0865 -0.0 -0.0" rpy="0 0 0"/>
+    <axis xyz="0 0 0"/>
+    
+  </joint>
+  <link name="waist_yaw_link">
+    
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+      <material name="UnitreeGray"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+    </collision>
+  </link>
+  <joint name="waist_yaw_joint" type="revolute">
+    <parent link="pelvis"/>
+    <child link="waist_yaw_link"/>
+    <origin xyz="-0.013019 -0.0 0.03451" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.14" upper="3.14" effort="5.0" velocity="40.0"/>
+  </joint>
+  <transmission name="trans_waist_yaw_joint">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="waist_yaw_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint>
+    <actuator name="motor_waist_yaw_joint"><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <link name="Spine1_link">
+    
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-5" ixy="0" ixz="0" iyy="1e-5" iyz="0" izz="1e-5"/>
+    </inertial>
+    
+    
+  </link>
+  <joint name="Spine1_fixed_joint" type="fixed">
+    <parent link="waist_yaw_link"/>
+    <child link="Spine1_link"/>
+    <origin xyz="0.0 0.0 0.06294" rpy="0 0 0"/>
+    <axis xyz="0 0 0"/>
+    
+  </joint>
+  <link name="waist_roll_link">
+    
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+      <material name="UnitreeGray"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+    </collision>
+  </link>
+  <joint name="waist_roll_joint" type="revolute">
+    <parent link="Spine1_link"/>
+    <child link="waist_roll_link"/>
+    <origin xyz="-0.0 -0.0 0.061716" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-3.14" upper="3.14" effort="5.0" velocity="40.0"/>
+  </joint>
+  <transmission name="trans_waist_roll_joint">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="waist_roll_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint>
+    <actuator name="motor_waist_roll_joint"><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <link name="torso_pitch_link">
+    
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+      <material name="UnitreeGray"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+    </collision>
+  </link>
+  <joint name="torso_pitch_joint" type="revolute">
+    <parent link="waist_roll_link"/>
+    <child link="torso_pitch_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-3.14" upper="3.14" effort="5.0" velocity="40.0"/>
+  </joint>
+  <transmission name="trans_torso_pitch_joint">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="torso_pitch_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint>
+    <actuator name="motor_torso_pitch_joint"><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <link name="Neck_link">
+    
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-5" ixy="0" ixz="0" iyy="1e-5" iyz="0" izz="1e-5"/>
+    </inertial>
+    
+    
+  </link>
+  <joint name="Neck_fixed_joint" type="fixed">
+    <parent link="torso_pitch_link"/>
+    <child link="Neck_link"/>
+    <origin xyz="0.0 0.0 0.129164" rpy="0 0 0"/>
+    <axis xyz="0 0 0"/>
+    
+  </joint>
+  <link name="Head_link">
+    
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-5" ixy="0" ixz="0" iyy="1e-5" iyz="0" izz="1e-5"/>
+    </inertial>
+    
+    
+  </link>
+  <joint name="Head_fixed_joint" type="fixed">
+    <parent link="Neck_link"/>
+    <child link="Head_link"/>
+    <origin xyz="-0.0 -0.0 0.058833" rpy="0 0 0"/>
+    <axis xyz="0 0 0"/>
+    
+  </joint>
+  <link name="LeftShoulder_link">
+    
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-5" ixy="0" ixz="0" iyy="1e-5" iyz="0" izz="1e-5"/>
+    </inertial>
+    
+    
+  </link>
+  <joint name="LeftShoulder_fixed_joint" type="fixed">
+    <parent link="torso_pitch_link"/>
+    <child link="LeftShoulder_link"/>
+    <origin xyz="-0.007402 0.03 0.09873" rpy="0 0 0"/>
+    <axis xyz="0 0 0"/>
+    
+  </joint>
+  <link name="left_shoulder_pitch_link">
+    
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+      <material name="UnitreeGray"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+    </collision>
+  </link>
+  <joint name="left_shoulder_pitch_joint" type="revolute">
+    <parent link="LeftShoulder_link"/>
+    <child link="left_shoulder_pitch_link"/>
+    <origin xyz="0.0 0.056421 0.0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-3.14" upper="3.14" effort="5.0" velocity="40.0"/>
+  </joint>
+  <transmission name="trans_left_shoulder_pitch_joint">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_shoulder_pitch_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint>
+    <actuator name="motor_left_shoulder_pitch_joint"><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <link name="left_shoulder_roll_link">
+    
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+      <material name="UnitreeGray"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+    </collision>
+  </link>
+  <joint name="left_shoulder_roll_joint" type="revolute">
+    <parent link="left_shoulder_pitch_link"/>
+    <child link="left_shoulder_roll_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-3.14" upper="3.14" effort="5.0" velocity="40.0"/>
+  </joint>
+  <transmission name="trans_left_shoulder_roll_joint">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_shoulder_roll_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint>
+    <actuator name="motor_left_shoulder_roll_joint"><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <link name="left_shoulder_yaw_link">
+    
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+      <material name="UnitreeGray"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+    </collision>
+  </link>
+  <joint name="left_shoulder_yaw_joint" type="revolute">
+    <parent link="left_shoulder_roll_link"/>
+    <child link="left_shoulder_yaw_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.14" upper="3.14" effort="5.0" velocity="40.0"/>
+  </joint>
+  <transmission name="trans_left_shoulder_yaw_joint">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_shoulder_yaw_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint>
+    <actuator name="motor_left_shoulder_yaw_joint"><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <link name="left_elbow_link">
+    
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+      <material name="UnitreeGray"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+    </collision>
+  </link>
+  <joint name="left_elbow_joint" type="revolute">
+    <parent link="left_shoulder_yaw_link"/>
+    <child link="left_elbow_link"/>
+    <origin xyz="-0.0 0.165 -0.0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.14" upper="3.14" effort="5.0" velocity="40.0"/>
+  </joint>
+  <transmission name="trans_left_elbow_joint">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_elbow_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint>
+    <actuator name="motor_left_elbow_joint"><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <link name="left_wrist_roll_link">
+    
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+      <material name="UnitreeGray"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+    </collision>
+  </link>
+  <joint name="left_wrist_roll_joint" type="revolute">
+    <parent link="left_elbow_link"/>
+    <child link="left_wrist_roll_link"/>
+    <origin xyz="0.0 0.126 -0.0" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-3.14" upper="3.14" effort="5.0" velocity="40.0"/>
+  </joint>
+  <transmission name="trans_left_wrist_roll_joint">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_wrist_roll_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint>
+    <actuator name="motor_left_wrist_roll_joint"><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <link name="left_wrist_pitch_link">
+    
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+      <material name="UnitreeGray"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+    </collision>
+  </link>
+  <joint name="left_wrist_pitch_joint" type="revolute">
+    <parent link="left_wrist_roll_link"/>
+    <child link="left_wrist_pitch_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-3.14" upper="3.14" effort="5.0" velocity="40.0"/>
+  </joint>
+  <transmission name="trans_left_wrist_pitch_joint">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_wrist_pitch_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint>
+    <actuator name="motor_left_wrist_pitch_joint"><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <link name="left_wrist_yaw_link">
+    
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+      <material name="UnitreeGray"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+    </collision>
+  </link>
+  <joint name="left_wrist_yaw_joint" type="revolute">
+    <parent link="left_wrist_pitch_link"/>
+    <child link="left_wrist_yaw_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.14" upper="3.14" effort="5.0" velocity="40.0"/>
+  </joint>
+  <transmission name="trans_left_wrist_yaw_joint">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_wrist_yaw_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint>
+    <actuator name="motor_left_wrist_yaw_joint"><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <link name="RightShoulder_link">
+    
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-5" ixy="0" ixz="0" iyy="1e-5" iyz="0" izz="1e-5"/>
+    </inertial>
+    
+    
+  </link>
+  <joint name="RightShoulder_fixed_joint" type="fixed">
+    <parent link="torso_pitch_link"/>
+    <child link="RightShoulder_link"/>
+    <origin xyz="-0.007402 -0.03 0.09873" rpy="0 0 0"/>
+    <axis xyz="0 0 0"/>
+    
+  </joint>
+  <link name="right_shoulder_pitch_link">
+    
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+      <material name="UnitreeGray"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+    </collision>
+  </link>
+  <joint name="right_shoulder_pitch_joint" type="revolute">
+    <parent link="RightShoulder_link"/>
+    <child link="right_shoulder_pitch_link"/>
+    <origin xyz="0.0 -0.056421 0.0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-3.14" upper="3.14" effort="5.0" velocity="40.0"/>
+  </joint>
+  <transmission name="trans_right_shoulder_pitch_joint">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_shoulder_pitch_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint>
+    <actuator name="motor_right_shoulder_pitch_joint"><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <link name="right_shoulder_roll_link">
+    
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+      <material name="UnitreeGray"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+    </collision>
+  </link>
+  <joint name="right_shoulder_roll_joint" type="revolute">
+    <parent link="right_shoulder_pitch_link"/>
+    <child link="right_shoulder_roll_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-3.14" upper="3.14" effort="5.0" velocity="40.0"/>
+  </joint>
+  <transmission name="trans_right_shoulder_roll_joint">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_shoulder_roll_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint>
+    <actuator name="motor_right_shoulder_roll_joint"><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <link name="right_shoulder_yaw_link">
+    
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+      <material name="UnitreeGray"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+    </collision>
+  </link>
+  <joint name="right_shoulder_yaw_joint" type="revolute">
+    <parent link="right_shoulder_roll_link"/>
+    <child link="right_shoulder_yaw_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.14" upper="3.14" effort="5.0" velocity="40.0"/>
+  </joint>
+  <transmission name="trans_right_shoulder_yaw_joint">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_shoulder_yaw_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint>
+    <actuator name="motor_right_shoulder_yaw_joint"><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <link name="right_elbow_link">
+    
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+      <material name="UnitreeGray"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+    </collision>
+  </link>
+  <joint name="right_elbow_joint" type="revolute">
+    <parent link="right_shoulder_yaw_link"/>
+    <child link="right_elbow_link"/>
+    <origin xyz="0.0 -0.165001 0.0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.14" upper="3.14" effort="5.0" velocity="40.0"/>
+  </joint>
+  <transmission name="trans_right_elbow_joint">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_elbow_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint>
+    <actuator name="motor_right_elbow_joint"><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <link name="right_wrist_roll_link">
+    
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+      <material name="UnitreeGray"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+    </collision>
+  </link>
+  <joint name="right_wrist_roll_joint" type="revolute">
+    <parent link="right_elbow_link"/>
+    <child link="right_wrist_roll_link"/>
+    <origin xyz="1e-06 -0.125999 2e-06" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-3.14" upper="3.14" effort="5.0" velocity="40.0"/>
+  </joint>
+  <transmission name="trans_right_wrist_roll_joint">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_wrist_roll_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint>
+    <actuator name="motor_right_wrist_roll_joint"><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <link name="right_wrist_pitch_link">
+    
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+      <material name="UnitreeGray"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+    </collision>
+  </link>
+  <joint name="right_wrist_pitch_joint" type="revolute">
+    <parent link="right_wrist_roll_link"/>
+    <child link="right_wrist_pitch_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-3.14" upper="3.14" effort="5.0" velocity="40.0"/>
+  </joint>
+  <transmission name="trans_right_wrist_pitch_joint">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_wrist_pitch_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint>
+    <actuator name="motor_right_wrist_pitch_joint"><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <link name="right_wrist_yaw_link">
+    
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+      <material name="UnitreeGray"><color rgba="0.7 0.7 0.7 1.0"/></material>
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><cylinder radius="0.025" length="0.035"/></geometry>
+    </collision>
+  </link>
+  <joint name="right_wrist_yaw_joint" type="revolute">
+    <parent link="right_wrist_pitch_link"/>
+    <child link="right_wrist_yaw_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.14" upper="3.14" effort="5.0" velocity="40.0"/>
+  </joint>
+  <transmission name="trans_right_wrist_yaw_joint">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_wrist_yaw_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint>
+    <actuator name="motor_right_wrist_yaw_joint"><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+</robot>

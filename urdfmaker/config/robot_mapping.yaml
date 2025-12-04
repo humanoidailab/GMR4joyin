@@ -1,0 +1,99 @@
+# ==============================================================================
+# 🗺️ 机器人拓扑与电机分配配置
+# ==============================================================================
+
+robot_name: "custom_g1_bot"
+root_map: "pelvis"  # BVH Root 映射为 URDF 的名字
+
+# 全局默认电机 (如果下面没指定 motor，就用这个)
+default_motor: "Unitree_Go1_Joint"
+
+# 🛠️ 关节配置逻辑
+# Key: BVH 骨骼名称 (支持模糊匹配，如 "LeftUpLeg")
+# Value: 
+#   - axis: 激活的轴 (X/Y/Z)
+#   - name: URDF 中的关节/Link名
+#   - motor: 使用电机库中的哪个型号
+map:
+  # ======================== 腰部自由度分布 (分散式) ========================
+  # 场景：BVH 的 Spine 有3个自由度，但我们想拆开
+  
+  # 1. 在 Hips (骨盆) 位置放一个 Yaw 轴电机
+  Spine: 
+    Z: {name: "waist_yaw", motor: "Zhuoyu_ML_25Nm"}
+    # X, Y 轴在这里不定义，会被视为 Fixed，或者你在 Spine 里定义
+
+  # 2. 在 Spine2 (脊柱第一节) 位置放 Pitch 和 Roll
+  Spine2:
+    X: {name: "waist_roll", motor: "Zhuoyu_ML_25Nm"}
+    Y: {name: "torso_pitch", motor: "Zhuoyu_ML_25Nm"}
+
+  # ======================== 腿部配置 ========================
+  LeftUpLeg:
+    Y: {name: "left_hip_pitch", motor: "Zhuoyu_MH_55Nm"}
+    X: {name: "left_hip_roll",  motor: "Zhuoyu_ML_25Nm"}
+    Z: {name: "left_hip_yaw",   motor: "Zhuoyu_ML_25Nm"}
+
+  RightUpLeg:
+    Y: {name: "right_hip_pitch", motor: "Zhuoyu_MH_55Nm"}
+    X: {name: "right_hip_roll",  motor: "Zhuoyu_ML_25Nm"}
+    Z: {name: "right_hip_yaw",   motor: "Zhuoyu_ML_25Nm"}
+
+  # 膝盖只有单自由度
+  LeftLeg:
+    Y: {name: "left_knee", motor: "Zhuoyu_MH_55Nm"}
+  
+  RightLeg:
+    Y: {name: "right_knee", motor: "Zhuoyu_MH_55Nm"}
+
+  LeftFoot:
+    Y: {name: "left_ankle_pitch", motor: "Zhuoyu_L_10Nm"}
+    X: {name: "left_ankle_roll",  motor: "Zhuoyu_L_10Nm"}
+
+  RightFoot:
+    Y: {name: "right_ankle_pitch", motor: "Zhuoyu_L_10Nm"}
+    X: {name: "right_ankle_roll",  motor: "Zhuoyu_L_10Nm"}
+
+  # ======================== 手臂配置 ========================
+  LeftArm:
+    Y: {name: "left_shoulder_pitch", motor: "Zhuoyu_L_10Nm"}
+    X: {name: "left_shoulder_roll",  motor: "Zhuoyu_L_10Nm"}
+    Z: {name: "left_shoulder_yaw",   motor: "Zhuoyu_L_10Nm"}
+
+  RightArm:
+    Y: {name: "right_shoulder_pitch", motor: "Zhuoyu_L_10Nm"}
+    X: {name: "right_shoulder_roll",  motor: "Zhuoyu_L_10Nm"}
+    Z: {name: "right_shoulder_yaw",   motor: "Zhuoyu_L_10Nm"}
+
+  LeftForeArm:
+    Z: {name: "left_elbow", motor: "Zhuoyu_L_10Nm"}
+
+  RightForeArm:
+    Z: {name: "right_elbow", motor: "Zhuoyu_L_10Nm"}
+
+  
+
+  # 手腕使用小电机
+  # LeftHand:
+  #   X: {name: "left_wrist_roll",  motor: "Small_Actuator"}
+  #   Y: {name: "left_wrist_pitch", motor: "Small_Actuator"}
+  #   Z: {name: "left_wrist_yaw",   motor: "Small_Actuator"}
+
+  # RightHand:
+  #   X: {name: "right_wrist_roll",  motor: "Small_Actuator"}
+  #   Y: {name: "right_wrist_pitch", motor: "Small_Actuator"}
+  #   Z: {name: "right_wrist_yaw",   motor: "Small_Actuator"}
+
+  # 🚀 新增：附件定义
+attachments:
+  # 语法: BVH节点名: [附件列表]
+  
+  # 电池包 (挂在骨盆 Hips 上)
+  Spine2:
+    - name: "battery_pack"
+      mass: 2           # kg
+      type: "box"         # 形状
+      dims: [0.08, 0.08, 0.1] # 尺寸 [x, y, z]
+      pos: [0, 0, 0.08]   # 相对 Hips 原点的位置 (向上)
+      rpy: [0, 0, 0]      # 旋转
+      color: "Motor"      # 可选: Motor(红), Base(黑), Hand(蓝)

@@ -1,0 +1,3278 @@
+robot_name: bvh_robot
+export_settings:
+  units: meters
+  scale_factor: 0.01
+  up_axis: Z
+  fwd_axis: X
+links:
+- name: RL_BoneRoot_link
+  mass: 1.0
+  length: 0.0
+- name: CC_Base_Pelvis_link
+  mass: 1.0
+  length: 0.145958
+- name: CC_Base_L_Thigh_link
+  mass: 1.0
+  length: 0.584308
+- name: CC_Base_L_Calf_link
+  mass: 1.0
+  length: 0.646702
+- name: CC_Base_L_Foot_link
+  mass: 1.0
+  length: 0.250861
+- name: CC_Base_L_ToeBaseShareBone_link
+  mass: 1.0
+  length: 0.12543
+- name: CC_Base_L_ToeBase_link
+  mass: 1.0
+  length: 0.051739
+- name: CC_Base_L_PinkyToe1_link
+  mass: 1.0
+  length: 0.026614
+- name: CC_Base_L_RingToe1_link
+  mass: 1.0
+  length: 0.026614
+- name: CC_Base_L_MidToe1_link
+  mass: 1.0
+  length: 0.026614
+- name: CC_Base_L_IndexToe1_link
+  mass: 1.0
+  length: 0.026614
+- name: CC_Base_L_BigToe1_link
+  mass: 1.0
+  length: 0.026614
+- name: CC_Base_L_CalfTwist01_link
+  mass: 1.0
+  length: 0.323351
+- name: CC_Base_L_CalfTwist02_link
+  mass: 1.0
+  length: 0.161675
+- name: CC_Base_L_KneeShareBone_link
+  mass: 1.0
+  length: 0.107784
+- name: CC_Base_L_ThighTwist01_link
+  mass: 1.0
+  length: 0.299464
+- name: CC_Base_L_ThighTwist02_link
+  mass: 1.0
+  length: 0.149732
+- name: CC_Base_R_Thigh_link
+  mass: 1.0
+  length: 0.58435
+- name: CC_Base_R_Calf_link
+  mass: 1.0
+  length: 0.0
+- name: CC_Base_R_KneeShareBone_link
+  mass: 1.0
+  length: 0.104793
+- name: CC_Base_R_Foot_link
+  mass: 1.0
+  length: 0.250835
+- name: CC_Base_R_ToeBase_link
+  mass: 1.0
+  length: 0.079918
+- name: CC_Base_R_BigToe1_link
+  mass: 1.0
+  length: 0.026654
+- name: CC_Base_R_PinkyToe1_link
+  mass: 1.0
+  length: 0.026654
+- name: CC_Base_R_RingToe1_link
+  mass: 1.0
+  length: 0.026654
+- name: CC_Base_R_IndexToe1_link
+  mass: 1.0
+  length: 0.026654
+- name: CC_Base_R_MidToe1_link
+  mass: 1.0
+  length: 0.026654
+- name: CC_Base_R_ToeBaseShareBone_link
+  mass: 1.0
+  length: 0.125418
+- name: CC_Base_R_CalfTwist01_link
+  mass: 1.0
+  length: 0.314379
+- name: CC_Base_R_CalfTwist02_link
+  mass: 1.0
+  length: 0.15719
+- name: CC_Base_R_ThighTwist01_link
+  mass: 1.0
+  length: 0.299485
+- name: CC_Base_R_ThighTwist02_link
+  mass: 1.0
+  length: 0.149742
+- name: CC_Base_Waist_link
+  mass: 1.0
+  length: 0.060289
+- name: CC_Base_Spine01_link
+  mass: 1.0
+  length: 0.232897
+- name: CC_Base_Spine02_link
+  mass: 1.0
+  length: 0.440704
+- name: CC_Base_NeckTwist01_link
+  mass: 1.0
+  length: 0.057321
+- name: CC_Base_NeckTwist02_link
+  mass: 1.0
+  length: 0.024867
+- name: CC_Base_Head_link
+  mass: 1.0
+  length: 1.0e-06
+- name: CC_Base_FacialBone_link
+  mass: 1.0
+  length: 0.064192
+- name: CC_Base_JawRoot_link
+  mass: 1.0
+  length: 0.070576
+- name: CC_Base_Tongue01_link
+  mass: 1.0
+  length: 0.024922
+- name: CC_Base_Tongue02_link
+  mass: 1.0
+  length: 0.041047
+- name: CC_Base_Tongue03_link
+  mass: 1.0
+  length: 0.020524
+- name: CC_Base_Teeth02_link
+  mass: 1.0
+  length: 0.03529
+- name: CC_Base_R_Eye_link
+  mass: 1.0
+  length: 0.084196
+- name: CC_Base_L_Eye_link
+  mass: 1.0
+  length: 0.084196
+- name: CC_Base_UpperJaw_link
+  mass: 1.0
+  length: 0.000722
+- name: CC_Base_Teeth01_link
+  mass: 1.0
+  length: 0.000361
+- name: CC_Base_L_Clavicle_link
+  mass: 1.0
+  length: 0.162127
+- name: CC_Base_L_Upperarm_link
+  mass: 1.0
+  length: 0.41278
+- name: CC_Base_L_Forearm_link
+  mass: 1.0
+  length: 1.0e-06
+- name: CC_Base_L_ForearmTwist01_link
+  mass: 1.0
+  length: 0.181057
+- name: CC_Base_L_ForearmTwist02_link
+  mass: 1.0
+  length: 0.090529
+- name: CC_Base_L_ElbowShareBone_link
+  mass: 1.0
+  length: 0.06013
+- name: CC_Base_L_Hand_link
+  mass: 1.0
+  length: 0.156442
+- name: CC_Base_L_Pinky1_link
+  mass: 1.0
+  length: 0.024711
+- name: CC_Base_L_Pinky2_link
+  mass: 1.0
+  length: 0.012915
+- name: CC_Base_L_Pinky3_link
+  mass: 1.0
+  length: 0.012915
+- name: CC_Base_L_Ring1_link
+  mass: 1.0
+  length: 0.066292
+- name: CC_Base_L_Ring2_link
+  mass: 1.0
+  length: 0.038254
+- name: CC_Base_L_Ring3_link
+  mass: 1.0
+  length: 0.019127
+- name: CC_Base_L_Mid1_link
+  mass: 1.0
+  length: 0.035587
+- name: CC_Base_L_Mid2_link
+  mass: 1.0
+  length: 0.043884
+- name: CC_Base_L_Mid3_link
+  mass: 1.0
+  length: 0.021942
+- name: CC_Base_L_Index1_link
+  mass: 1.0
+  length: 0.031531
+- name: CC_Base_L_Index2_link
+  mass: 1.0
+  length: 0.039582
+- name: CC_Base_L_Index3_link
+  mass: 1.0
+  length: 0.019791
+- name: CC_Base_L_Thumb1_link
+  mass: 1.0
+  length: 0.045057
+- name: CC_Base_L_Thumb2_link
+  mass: 1.0
+  length: 0.023184
+- name: CC_Base_L_Thumb3_link
+  mass: 1.0
+  length: 0.023184
+- name: CC_Base_L_UpperarmTwist01_link
+  mass: 1.0
+  length: 0.206391
+- name: CC_Base_L_UpperarmTwist02_link
+  mass: 1.0
+  length: 0.103195
+- name: CC_Base_L_RibsTwist_link
+  mass: 1.0
+  length: 0.031602
+- name: CC_Base_L_Breast_link
+  mass: 1.0
+  length: 0.015801
+- name: CC_Base_R_RibsTwist_link
+  mass: 1.0
+  length: 0.031603
+- name: CC_Base_R_Breast_link
+  mass: 1.0
+  length: 0.015801
+- name: CC_Base_R_Clavicle_link
+  mass: 1.0
+  length: 0.080307
+- name: CC_Base_R_Upperarm_link
+  mass: 1.0
+  length: 0.412306
+- name: CC_Base_R_Forearm_link
+  mass: 1.0
+  length: 0.0
+- name: CC_Base_R_ElbowShareBone_link
+  mass: 1.0
+  length: 0.060136
+- name: CC_Base_R_ForearmTwist01_link
+  mass: 1.0
+  length: 0.180407
+- name: CC_Base_R_ForearmTwist02_link
+  mass: 1.0
+  length: 0.090203
+- name: CC_Base_R_Hand_link
+  mass: 1.0
+  length: 0.15361
+- name: CC_Base_R_Ring1_link
+  mass: 1.0
+  length: 0.066142
+- name: CC_Base_R_Ring2_link
+  mass: 1.0
+  length: 0.037718
+- name: CC_Base_R_Ring3_link
+  mass: 1.0
+  length: 0.018859
+- name: CC_Base_R_Mid1_link
+  mass: 1.0
+  length: 0.069794
+- name: CC_Base_R_Mid2_link
+  mass: 1.0
+  length: 0.043229
+- name: CC_Base_R_Mid3_link
+  mass: 1.0
+  length: 0.021615
+- name: CC_Base_R_Thumb1_link
+  mass: 1.0
+  length: 0.088218
+- name: CC_Base_R_Thumb2_link
+  mass: 1.0
+  length: 0.045472
+- name: CC_Base_R_Thumb3_link
+  mass: 1.0
+  length: 0.022736
+- name: CC_Base_R_Index1_link
+  mass: 1.0
+  length: 0.061797
+- name: CC_Base_R_Index2_link
+  mass: 1.0
+  length: 0.038999
+- name: CC_Base_R_Index3_link
+  mass: 1.0
+  length: 0.0195
+- name: CC_Base_R_Pinky1_link
+  mass: 1.0
+  length: 0.048448
+- name: CC_Base_R_Pinky2_link
+  mass: 1.0
+  length: 0.025312
+- name: CC_Base_R_Pinky3_link
+  mass: 1.0
+  length: 0.012656
+- name: CC_Base_R_UpperarmTwist01_link
+  mass: 1.0
+  length: 0.206255
+- name: CC_Base_R_UpperarmTwist02_link
+  mass: 1.0
+  length: 0.103127
+joint_groups:
+  RL_BoneRoot_to_CC_Base_Pelvis:
+    parent_link: RL_BoneRoot_link
+    child_link: CC_Base_Pelvis_link
+    master_origin_xyz:
+    - 0.0
+    - 0.0
+    - -0.0
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_Pelvis_to_CC_Base_L_Thigh:
+    parent_link: CC_Base_Pelvis_link
+    child_link: CC_Base_L_Thigh_link
+    master_origin_xyz:
+    - 0.013045
+    - 0.141485
+    - -0.033399
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_Thigh_to_CC_Base_L_Calf:
+    parent_link: CC_Base_L_Thigh_link
+    child_link: CC_Base_L_Calf_link
+    master_origin_xyz:
+    - 0.005691
+    - -0.011928
+    - -0.584159
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_Calf_to_CC_Base_L_Foot:
+    parent_link: CC_Base_L_Calf_link
+    child_link: CC_Base_L_Foot_link
+    master_origin_xyz:
+    - -0.011953
+    - -0.013163
+    - -0.646457
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_Foot_to_CC_Base_L_ToeBaseShareBone:
+    parent_link: CC_Base_L_Foot_link
+    child_link: CC_Base_L_ToeBaseShareBone_link
+    master_origin_xyz:
+    - 0.240371
+    - 0.02617
+    - -0.066843
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_Foot_to_CC_Base_L_ToeBase:
+    parent_link: CC_Base_L_Foot_link
+    child_link: CC_Base_L_ToeBase_link
+    master_origin_xyz:
+    - 0.240371
+    - 0.02617
+    - -0.066843
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_ToeBase_to_CC_Base_L_PinkyToe1:
+    parent_link: CC_Base_L_ToeBase_link
+    child_link: CC_Base_L_PinkyToe1_link
+    master_origin_xyz:
+    - 0.00246
+    - 0.051209
+    - -0.006967
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_ToeBase_to_CC_Base_L_RingToe1:
+    parent_link: CC_Base_L_ToeBase_link
+    child_link: CC_Base_L_RingToe1_link
+    master_origin_xyz:
+    - 0.023874
+    - 0.027375
+    - 0.001582
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_ToeBase_to_CC_Base_L_MidToe1:
+    parent_link: CC_Base_L_ToeBase_link
+    child_link: CC_Base_L_MidToe1_link
+    master_origin_xyz:
+    - 0.043133
+    - 0.002673
+    - 0.003646
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_ToeBase_to_CC_Base_L_IndexToe1:
+    parent_link: CC_Base_L_ToeBase_link
+    child_link: CC_Base_L_IndexToe1_link
+    master_origin_xyz:
+    - 0.047671
+    - -0.025934
+    - 0.007873
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_ToeBase_to_CC_Base_L_BigToe1:
+    parent_link: CC_Base_L_ToeBase_link
+    child_link: CC_Base_L_BigToe1_link
+    master_origin_xyz:
+    - 0.04664
+    - -0.064768
+    - 0.001918
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_Calf_to_CC_Base_L_CalfTwist01:
+    parent_link: CC_Base_L_Calf_link
+    child_link: CC_Base_L_CalfTwist01_link
+    master_origin_xyz:
+    - -0.0
+    - -0.0
+    - -0.0
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_CalfTwist01_to_CC_Base_L_CalfTwist02:
+    parent_link: CC_Base_L_CalfTwist01_link
+    child_link: CC_Base_L_CalfTwist02_link
+    master_origin_xyz:
+    - -0.005971
+    - -0.006575
+    - -0.323229
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_Calf_to_CC_Base_L_KneeShareBone:
+    parent_link: CC_Base_L_Calf_link
+    child_link: CC_Base_L_KneeShareBone_link
+    master_origin_xyz:
+    - -0.0
+    - -0.0
+    - -0.0
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_Thigh_to_CC_Base_L_ThighTwist01:
+    parent_link: CC_Base_L_Thigh_link
+    child_link: CC_Base_L_ThighTwist01_link
+    master_origin_xyz:
+    - -0.0
+    - 0.0
+    - -1.0e-06
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_ThighTwist01_to_CC_Base_L_ThighTwist02:
+    parent_link: CC_Base_L_ThighTwist01_link
+    child_link: CC_Base_L_ThighTwist02_link
+    master_origin_xyz:
+    - 0.002929
+    - -0.00597
+    - -0.299391
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_Pelvis_to_CC_Base_R_Thigh:
+    parent_link: CC_Base_Pelvis_link
+    child_link: CC_Base_R_Thigh_link
+    master_origin_xyz:
+    - 0.013045
+    - -0.141483
+    - -0.033405
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_Thigh_to_CC_Base_R_Calf:
+    parent_link: CC_Base_R_Thigh_link
+    child_link: CC_Base_R_Calf_link
+    master_origin_xyz:
+    - 0.005835
+    - 0.011927
+    - -0.584199
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_Calf_to_CC_Base_R_KneeShareBone:
+    parent_link: CC_Base_R_Calf_link
+    child_link: CC_Base_R_KneeShareBone_link
+    master_origin_xyz:
+    - 0.0
+    - -0.0
+    - 0.0
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_Calf_to_CC_Base_R_Foot:
+    parent_link: CC_Base_R_Calf_link
+    child_link: CC_Base_R_Foot_link
+    master_origin_xyz:
+    - -0.011674
+    - 0.012794
+    - -0.628521
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_Foot_to_CC_Base_R_ToeBase:
+    parent_link: CC_Base_R_Foot_link
+    child_link: CC_Base_R_ToeBase_link
+    master_origin_xyz:
+    - 0.240322
+    - -0.026167
+    - -0.066925
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_ToeBase_to_CC_Base_R_BigToe1:
+    parent_link: CC_Base_R_ToeBase_link
+    child_link: CC_Base_R_BigToe1_link
+    master_origin_xyz:
+    - 0.046784
+    - 0.064764
+    - 0.001938
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_ToeBase_to_CC_Base_R_PinkyToe1:
+    parent_link: CC_Base_R_ToeBase_link
+    child_link: CC_Base_R_PinkyToe1_link
+    master_origin_xyz:
+    - 0.002485
+    - -0.051217
+    - -0.006966
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_ToeBase_to_CC_Base_R_RingToe1:
+    parent_link: CC_Base_R_ToeBase_link
+    child_link: CC_Base_R_RingToe1_link
+    master_origin_xyz:
+    - 0.023949
+    - -0.027384
+    - 0.001589
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_ToeBase_to_CC_Base_R_IndexToe1:
+    parent_link: CC_Base_R_ToeBase_link
+    child_link: CC_Base_R_IndexToe1_link
+    master_origin_xyz:
+    - 0.047814
+    - 0.025929
+    - 0.00789
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_ToeBase_to_CC_Base_R_MidToe1:
+    parent_link: CC_Base_R_ToeBase_link
+    child_link: CC_Base_R_MidToe1_link
+    master_origin_xyz:
+    - 0.043262
+    - -0.002682
+    - 0.003662
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_Foot_to_CC_Base_R_ToeBaseShareBone:
+    parent_link: CC_Base_R_Foot_link
+    child_link: CC_Base_R_ToeBaseShareBone_link
+    master_origin_xyz:
+    - 0.240322
+    - -0.026167
+    - -0.066925
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_Calf_to_CC_Base_R_CalfTwist01:
+    parent_link: CC_Base_R_Calf_link
+    child_link: CC_Base_R_CalfTwist01_link
+    master_origin_xyz:
+    - 0.0
+    - -0.0
+    - 0.0
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_CalfTwist01_to_CC_Base_R_CalfTwist02:
+    parent_link: CC_Base_R_CalfTwist01_link
+    child_link: CC_Base_R_CalfTwist02_link
+    master_origin_xyz:
+    - -0.005876
+    - 0.006384
+    - -0.31426
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_Thigh_to_CC_Base_R_ThighTwist01:
+    parent_link: CC_Base_R_Thigh_link
+    child_link: CC_Base_R_ThighTwist01_link
+    master_origin_xyz:
+    - -0.0
+    - -0.0
+    - -1.0e-06
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_ThighTwist01_to_CC_Base_R_ThighTwist02:
+    parent_link: CC_Base_R_ThighTwist01_link
+    child_link: CC_Base_R_ThighTwist02_link
+    master_origin_xyz:
+    - 0.002998
+    - 0.005936
+    - -0.299411
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  RL_BoneRoot_to_CC_Base_Waist:
+    parent_link: RL_BoneRoot_link
+    child_link: CC_Base_Waist_link
+    master_origin_xyz:
+    - 0.029532
+    - 5.0e-06
+    - 0.07326
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_Waist_to_CC_Base_Spine01:
+    parent_link: CC_Base_Waist_link
+    child_link: CC_Base_Spine01_link
+    master_origin_xyz:
+    - 0.014065
+    - -0.0
+    - 0.058625
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_Spine01_to_CC_Base_Spine02:
+    parent_link: CC_Base_Spine01_link
+    child_link: CC_Base_Spine02_link
+    master_origin_xyz:
+    - -0.015828
+    - -0.0
+    - 0.232358
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_Spine02_to_CC_Base_NeckTwist01:
+    parent_link: CC_Base_Spine02_link
+    child_link: CC_Base_NeckTwist01_link
+    master_origin_xyz:
+    - -0.083462
+    - 0.0
+    - 0.432728
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_NeckTwist01_to_CC_Base_NeckTwist02:
+    parent_link: CC_Base_NeckTwist01_link
+    child_link: CC_Base_NeckTwist02_link
+    master_origin_xyz:
+    - 0.012922
+    - 0.0
+    - 0.055846
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_NeckTwist02_to_CC_Base_Head:
+    parent_link: CC_Base_NeckTwist02_link
+    child_link: CC_Base_Head_link
+    master_origin_xyz:
+    - 0.0058
+    - 0.0
+    - 0.024181
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_Head_to_CC_Base_FacialBone:
+    parent_link: CC_Base_Head_link
+    child_link: CC_Base_FacialBone_link
+    master_origin_xyz:
+    - -0.0
+    - 0.0
+    - 1.0e-06
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_FacialBone_to_CC_Base_JawRoot:
+    parent_link: CC_Base_FacialBone_link
+    child_link: CC_Base_JawRoot_link
+    master_origin_xyz:
+    - 0.058901
+    - 2.0e-06
+    - 0.025521
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_JawRoot_to_CC_Base_Tongue01:
+    parent_link: CC_Base_JawRoot_link
+    child_link: CC_Base_Tongue01_link
+    master_origin_xyz:
+    - 0.068753
+    - 2.0e-06
+    - -0.015935
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_Tongue01_to_CC_Base_Tongue02:
+    parent_link: CC_Base_Tongue01_link
+    child_link: CC_Base_Tongue02_link
+    master_origin_xyz:
+    - 0.024779
+    - 0.0
+    - -0.002663
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_Tongue02_to_CC_Base_Tongue03:
+    parent_link: CC_Base_Tongue02_link
+    child_link: CC_Base_Tongue03_link
+    master_origin_xyz:
+    - 0.039454
+    - -0.0
+    - -0.011327
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_JawRoot_to_CC_Base_Teeth02:
+    parent_link: CC_Base_JawRoot_link
+    child_link: CC_Base_Teeth02_link
+    master_origin_xyz:
+    - 0.068761
+    - 2.0e-06
+    - -0.015944
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_FacialBone_to_CC_Base_R_Eye:
+    parent_link: CC_Base_FacialBone_link
+    child_link: CC_Base_R_Eye_link
+    master_origin_xyz:
+    - 0.166165
+    - -0.08677
+    - 0.133668
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_FacialBone_to_CC_Base_L_Eye:
+    parent_link: CC_Base_FacialBone_link
+    child_link: CC_Base_L_Eye_link
+    master_origin_xyz:
+    - 0.166127
+    - 0.086708
+    - 0.133604
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_FacialBone_to_CC_Base_UpperJaw:
+    parent_link: CC_Base_FacialBone_link
+    child_link: CC_Base_UpperJaw_link
+    master_origin_xyz:
+    - 0.140942
+    - 3.0e-06
+    - 0.048335
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_UpperJaw_to_CC_Base_Teeth01:
+    parent_link: CC_Base_UpperJaw_link
+    child_link: CC_Base_Teeth01_link
+    master_origin_xyz:
+    - 0.00072
+    - 0.0
+    - 6.1e-05
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_Spine02_to_CC_Base_L_Clavicle:
+    parent_link: CC_Base_Spine02_link
+    child_link: CC_Base_L_Clavicle_link
+    master_origin_xyz:
+    - -0.063316
+    - 0.086988
+    - 0.3377
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_Clavicle_to_CC_Base_L_Upperarm:
+    parent_link: CC_Base_L_Clavicle_link
+    child_link: CC_Base_L_Upperarm_link
+    master_origin_xyz:
+    - -0.037397
+    - 0.157728
+    - -0.0029
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_Upperarm_to_CC_Base_L_Forearm:
+    parent_link: CC_Base_L_Upperarm_link
+    child_link: CC_Base_L_Forearm_link
+    master_origin_xyz:
+    - -0.000745
+    - 0.412779
+    - 0.00047
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_Forearm_to_CC_Base_L_ForearmTwist01:
+    parent_link: CC_Base_L_Forearm_link
+    child_link: CC_Base_L_ForearmTwist01_link
+    master_origin_xyz:
+    - 0.0
+    - 0.0
+    - 1.0e-06
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_ForearmTwist01_to_CC_Base_L_ForearmTwist02:
+    parent_link: CC_Base_L_ForearmTwist01_link
+    child_link: CC_Base_L_ForearmTwist02_link
+    master_origin_xyz:
+    - 0.000134
+    - 0.181054
+    - -0.001038
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_Forearm_to_CC_Base_L_ElbowShareBone:
+    parent_link: CC_Base_L_Forearm_link
+    child_link: CC_Base_L_ElbowShareBone_link
+    master_origin_xyz:
+    - 0.0
+    - 0.0
+    - 1.0e-06
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_Forearm_to_CC_Base_L_Hand:
+    parent_link: CC_Base_L_Forearm_link
+    child_link: CC_Base_L_Hand_link
+    master_origin_xyz:
+    - 0.000268
+    - 0.360778
+    - 7.3e-05
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_Hand_to_CC_Base_L_Pinky1:
+    parent_link: CC_Base_L_Hand_link
+    child_link: CC_Base_L_Pinky1_link
+    master_origin_xyz:
+    - -0.03894
+    - 0.151477
+    - -0.003535
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_Pinky1_to_CC_Base_L_Pinky2:
+    parent_link: CC_Base_L_Pinky1_link
+    child_link: CC_Base_L_Pinky2_link
+    master_origin_xyz:
+    - -0.000173
+    - 0.024707
+    - -0.000411
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_Pinky2_to_CC_Base_L_Pinky3:
+    parent_link: CC_Base_L_Pinky2_link
+    child_link: CC_Base_L_Pinky3_link
+    master_origin_xyz:
+    - -0.000325
+    - 0.012909
+    - -0.000215
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_Hand_to_CC_Base_L_Ring1:
+    parent_link: CC_Base_L_Hand_link
+    child_link: CC_Base_L_Ring1_link
+    master_origin_xyz:
+    - -0.006033
+    - 0.152076
+    - 0.002155
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_Ring1_to_CC_Base_L_Ring2:
+    parent_link: CC_Base_L_Ring1_link
+    child_link: CC_Base_L_Ring2_link
+    master_origin_xyz:
+    - -0.00098
+    - 0.066248
+    - -0.002214
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_Ring2_to_CC_Base_L_Ring3:
+    parent_link: CC_Base_L_Ring2_link
+    child_link: CC_Base_L_Ring3_link
+    master_origin_xyz:
+    - -0.000893
+    - 0.038243
+    - -0.000134
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_Hand_to_CC_Base_L_Mid1:
+    parent_link: CC_Base_L_Hand_link
+    child_link: CC_Base_L_Mid1_link
+    master_origin_xyz:
+    - 0.027086
+    - 0.152285
+    - 0.009639
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_Mid1_to_CC_Base_L_Mid2:
+    parent_link: CC_Base_L_Mid1_link
+    child_link: CC_Base_L_Mid2_link
+    master_origin_xyz:
+    - 0.000114
+    - 0.035581
+    - -0.000656
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_Mid2_to_CC_Base_L_Mid3:
+    parent_link: CC_Base_L_Mid2_link
+    child_link: CC_Base_L_Mid3_link
+    master_origin_xyz:
+    - -3.3e-05
+    - 0.043883
+    - -0.000282
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_Hand_to_CC_Base_L_Index1:
+    parent_link: CC_Base_L_Hand_link
+    child_link: CC_Base_L_Index1_link
+    master_origin_xyz:
+    - 0.065651
+    - 0.149911
+    - 0.006502
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_Index1_to_CC_Base_L_Index2:
+    parent_link: CC_Base_L_Index1_link
+    child_link: CC_Base_L_Index2_link
+    master_origin_xyz:
+    - 0.000161
+    - 0.031525
+    - -0.000563
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_Index2_to_CC_Base_L_Index3:
+    parent_link: CC_Base_L_Index2_link
+    child_link: CC_Base_L_Index3_link
+    master_origin_xyz:
+    - 0.000378
+    - 0.039579
+    - -0.000234
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_Hand_to_CC_Base_L_Thumb1:
+    parent_link: CC_Base_L_Hand_link
+    child_link: CC_Base_L_Thumb1_link
+    master_origin_xyz:
+    - 0.039431
+    - 0.023565
+    - -0.00793
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_Thumb1_to_CC_Base_L_Thumb2:
+    parent_link: CC_Base_L_Thumb1_link
+    child_link: CC_Base_L_Thumb2_link
+    master_origin_xyz:
+    - 0.032504
+    - 0.031199
+    - -0.000413
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_Thumb2_to_CC_Base_L_Thumb3:
+    parent_link: CC_Base_L_Thumb2_link
+    child_link: CC_Base_L_Thumb3_link
+    master_origin_xyz:
+    - 0.010275
+    - 0.020782
+    - 1.9e-05
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_Upperarm_to_CC_Base_L_UpperarmTwist01:
+    parent_link: CC_Base_L_Upperarm_link
+    child_link: CC_Base_L_UpperarmTwist01_link
+    master_origin_xyz:
+    - 0.0
+    - -0.0
+    - 1.0e-06
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_UpperarmTwist01_to_CC_Base_L_UpperarmTwist02:
+    parent_link: CC_Base_L_UpperarmTwist01_link
+    child_link: CC_Base_L_UpperarmTwist02_link
+    master_origin_xyz:
+    - -0.00037
+    - 0.20639
+    - 0.000216
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_Spine02_to_CC_Base_L_RibsTwist:
+    parent_link: CC_Base_Spine02_link
+    child_link: CC_Base_L_RibsTwist_link
+    master_origin_xyz:
+    - 0.118396
+    - 0.141823
+    - 0.137787
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_L_RibsTwist_to_CC_Base_L_Breast:
+    parent_link: CC_Base_L_RibsTwist_link
+    child_link: CC_Base_L_Breast_link
+    master_origin_xyz:
+    - 0.0316
+    - 0.0
+    - 0.0004
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_Spine02_to_CC_Base_R_RibsTwist:
+    parent_link: CC_Base_Spine02_link
+    child_link: CC_Base_R_RibsTwist_link
+    master_origin_xyz:
+    - 0.118011
+    - -0.141248
+    - 0.138237
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_RibsTwist_to_CC_Base_R_Breast:
+    parent_link: CC_Base_R_RibsTwist_link
+    child_link: CC_Base_R_Breast_link
+    master_origin_xyz:
+    - 0.0316
+    - 1.0e-06
+    - 0.000401
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_Spine02_to_CC_Base_R_Clavicle:
+    parent_link: CC_Base_Spine02_link
+    child_link: CC_Base_R_Clavicle_link
+    master_origin_xyz:
+    - -0.063279
+    - -0.089253
+    - 0.337499
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_Clavicle_to_CC_Base_R_Upperarm:
+    parent_link: CC_Base_R_Clavicle_link
+    child_link: CC_Base_R_Upperarm_link
+    master_origin_xyz:
+    - -0.018515
+    - -0.078131
+    - -0.001429
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_Upperarm_to_CC_Base_R_Forearm:
+    parent_link: CC_Base_R_Upperarm_link
+    child_link: CC_Base_R_Forearm_link
+    master_origin_xyz:
+    - -0.000735
+    - -0.412305
+    - 0.000431
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_Forearm_to_CC_Base_R_ElbowShareBone:
+    parent_link: CC_Base_R_Forearm_link
+    child_link: CC_Base_R_ElbowShareBone_link
+    master_origin_xyz:
+    - 0.0
+    - -0.0
+    - 0.0
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_Forearm_to_CC_Base_R_ForearmTwist01:
+    parent_link: CC_Base_R_Forearm_link
+    child_link: CC_Base_R_ForearmTwist01_link
+    master_origin_xyz:
+    - 0.0
+    - -0.0
+    - -0.0
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_ForearmTwist01_to_CC_Base_R_ForearmTwist02:
+    parent_link: CC_Base_R_ForearmTwist01_link
+    child_link: CC_Base_R_ForearmTwist02_link
+    master_origin_xyz:
+    - 0.000129
+    - -0.180407
+    - 5.0e-05
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_Forearm_to_CC_Base_R_Hand:
+    parent_link: CC_Base_R_Forearm_link
+    child_link: CC_Base_R_Hand_link
+    master_origin_xyz:
+    - 0.000249
+    - -0.360813
+    - 0.000109
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_Hand_to_CC_Base_R_Ring1:
+    parent_link: CC_Base_R_Hand_link
+    child_link: CC_Base_R_Ring1_link
+    master_origin_xyz:
+    - -0.006088
+    - -0.153469
+    - 0.002468
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_Ring1_to_CC_Base_R_Ring2:
+    parent_link: CC_Base_R_Ring1_link
+    child_link: CC_Base_R_Ring2_link
+    master_origin_xyz:
+    - -0.000978
+    - -0.066131
+    - -0.00071
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_Ring2_to_CC_Base_R_Ring3:
+    parent_link: CC_Base_R_Ring2_link
+    child_link: CC_Base_R_Ring3_link
+    master_origin_xyz:
+    - -0.000879
+    - -0.037705
+    - -0.000396
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_Hand_to_CC_Base_R_Mid1:
+    parent_link: CC_Base_R_Hand_link
+    child_link: CC_Base_R_Mid1_link
+    master_origin_xyz:
+    - 0.02596
+    - -0.153648
+    - 0.009858
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_Mid1_to_CC_Base_R_Mid2:
+    parent_link: CC_Base_R_Mid1_link
+    child_link: CC_Base_R_Mid2_link
+    master_origin_xyz:
+    - 0.000222
+    - -0.069785
+    - -0.001115
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_Mid2_to_CC_Base_R_Mid3:
+    parent_link: CC_Base_R_Mid2_link
+    child_link: CC_Base_R_Mid3_link
+    master_origin_xyz:
+    - -2.8e-05
+    - -0.043224
+    - -0.00067
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_Hand_to_CC_Base_R_Thumb1:
+    parent_link: CC_Base_R_Hand_link
+    child_link: CC_Base_R_Thumb1_link
+    master_origin_xyz:
+    - 0.038086
+    - -0.023681
+    - -0.0077
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_Thumb1_to_CC_Base_R_Thumb2:
+    parent_link: CC_Base_R_Thumb1_link
+    child_link: CC_Base_R_Thumb2_link
+    master_origin_xyz:
+    - 0.064059
+    - -0.060651
+    - -0.000649
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_Thumb2_to_CC_Base_R_Thumb3:
+    parent_link: CC_Base_R_Thumb2_link
+    child_link: CC_Base_R_Thumb3_link
+    master_origin_xyz:
+    - 0.019977
+    - -0.040848
+    - 0.000186
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_Hand_to_CC_Base_R_Index1:
+    parent_link: CC_Base_R_Hand_link
+    child_link: CC_Base_R_Index1_link
+    master_origin_xyz:
+    - 0.063284
+    - -0.15117
+    - 0.006815
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_Index1_to_CC_Base_R_Index2:
+    parent_link: CC_Base_R_Index1_link
+    child_link: CC_Base_R_Index2_link
+    master_origin_xyz:
+    - 0.000314
+    - -0.061791
+    - -0.000823
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_Index2_to_CC_Base_R_Index3:
+    parent_link: CC_Base_R_Index2_link
+    child_link: CC_Base_R_Index3_link
+    master_origin_xyz:
+    - 0.000372
+    - -0.038994
+    - -0.000534
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_Hand_to_CC_Base_R_Pinky1:
+    parent_link: CC_Base_R_Hand_link
+    child_link: CC_Base_R_Pinky1_link
+    master_origin_xyz:
+    - -0.037916
+    - -0.15291
+    - -0.003147
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_Pinky1_to_CC_Base_R_Pinky2:
+    parent_link: CC_Base_R_Pinky1_link
+    child_link: CC_Base_R_Pinky2_link
+    master_origin_xyz:
+    - -0.000341
+    - -0.048443
+    - -0.000602
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_Pinky2_to_CC_Base_R_Pinky3:
+    parent_link: CC_Base_R_Pinky2_link
+    child_link: CC_Base_R_Pinky3_link
+    master_origin_xyz:
+    - -0.000636
+    - -0.025303
+    - -0.000281
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_Upperarm_to_CC_Base_R_UpperarmTwist01:
+    parent_link: CC_Base_R_Upperarm_link
+    child_link: CC_Base_R_UpperarmTwist01_link
+    master_origin_xyz:
+    - -0.0
+    - -0.0
+    - -1.0e-06
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0
+  CC_Base_R_UpperarmTwist01_to_CC_Base_R_UpperarmTwist02:
+    parent_link: CC_Base_R_UpperarmTwist01_link
+    child_link: CC_Base_R_UpperarmTwist02_link
+    master_origin_xyz:
+    - -0.000368
+    - -0.206253
+    - -0.000669
+    master_origin_rpy:
+    - 0
+    - 0
+    - 0
+    serial_joints:
+    - name_suffix: _xrot
+      type: revolute
+      axis:
+      - 0.0
+      - 1.0
+      - 0.0
+    - name_suffix: _yrot
+      type: revolute
+      axis:
+      - -1.0
+      - 0.0
+      - 0.0
+    - name_suffix: _zrot
+      type: revolute
+      axis:
+      - 0.0
+      - 0.0
+      - 1.0

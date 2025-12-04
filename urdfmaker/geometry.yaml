@@ -1,0 +1,285 @@
+robot_name: bvh_robot_geometry
+export_settings:
+  units: meters
+  scale_factor: 0.01
+  aligned_axes:
+    up: Z
+    fwd: X
+    left: Y
+links:
+- name: Hips
+  length: 0.053557
+- name: LeftUpLeg
+  length: 0.2175
+- name: LeftLeg
+  length: 0.211861
+- name: LeftFoot
+  length: 0.0865
+- name: LeftToe
+  length: 0.0
+- name: RightUpLeg
+  length: 0.2175
+- name: RightLeg
+  length: 0.211861
+- name: RightFoot
+  length: 0.0865
+- name: RightToe
+  length: 0.0
+- name: Spine
+  length: 0.06294
+- name: Spine1
+  length: 0.061716
+- name: Spine2
+  length: 0.129164
+- name: Neck
+  length: 0.058833
+- name: Head
+  length: 0.0
+- name: LeftShoulder
+  length: 0.056421
+- name: LeftArm
+  length: 0.165
+- name: LeftForeArm
+  length: 0.126
+- name: LeftHand
+  length: 0.0
+- name: RightShoulder
+  length: 0.056421
+- name: RightArm
+  length: 0.165001
+- name: RightForeArm
+  length: 0.125999
+- name: RightHand
+  length: 0.0
+joints_geometry:
+  LeftUpLeg:
+    parent: Hips
+    child: LeftUpLeg
+    origin_xyz:
+    - 0.009289
+    - 0.052743
+    - 0.000517
+    origin_rpy:
+    - 0
+    - 0
+    - 0
+  LeftLeg:
+    parent: LeftUpLeg
+    child: LeftLeg
+    origin_xyz:
+    - -0.0
+    - -0.0
+    - -0.2175
+    origin_rpy:
+    - 0
+    - 0
+    - 0
+  LeftFoot:
+    parent: LeftLeg
+    child: LeftFoot
+    origin_xyz:
+    - 0.0
+    - 0.0
+    - -0.211861
+    origin_rpy:
+    - 0
+    - 0
+    - 0
+  LeftToe:
+    parent: LeftFoot
+    child: LeftToe
+    origin_xyz:
+    - 0.0865
+    - -0.0
+    - 0.0
+    origin_rpy:
+    - 0
+    - 0
+    - 0
+  RightUpLeg:
+    parent: Hips
+    child: RightUpLeg
+    origin_xyz:
+    - 0.009289
+    - -0.052743
+    - 0.000517
+    origin_rpy:
+    - 0
+    - 0
+    - 0
+  RightLeg:
+    parent: RightUpLeg
+    child: RightLeg
+    origin_xyz:
+    - -0.0
+    - -0.0
+    - -0.2175
+    origin_rpy:
+    - 0
+    - 0
+    - 0
+  RightFoot:
+    parent: RightLeg
+    child: RightFoot
+    origin_xyz:
+    - 0.0
+    - -0.0
+    - -0.211861
+    origin_rpy:
+    - 0
+    - 0
+    - 0
+  RightToe:
+    parent: RightFoot
+    child: RightToe
+    origin_xyz:
+    - 0.0865
+    - -0.0
+    - -0.0
+    origin_rpy:
+    - 0
+    - 0
+    - 0
+  Spine:
+    parent: Hips
+    child: Spine
+    origin_xyz:
+    - -0.013019
+    - -0.0
+    - 0.03451
+    origin_rpy:
+    - 0
+    - 0
+    - 0
+  Spine1:
+    parent: Spine
+    child: Spine1
+    origin_xyz:
+    - 0.0
+    - 0.0
+    - 0.06294
+    origin_rpy:
+    - 0
+    - 0
+    - 0
+  Spine2:
+    parent: Spine1
+    child: Spine2
+    origin_xyz:
+    - -0.0
+    - -0.0
+    - 0.061716
+    origin_rpy:
+    - 0
+    - 0
+    - 0
+  Neck:
+    parent: Spine2
+    child: Neck
+    origin_xyz:
+    - 0.0
+    - 0.0
+    - 0.129164
+    origin_rpy:
+    - 0
+    - 0
+    - 0
+  Head:
+    parent: Neck
+    child: Head
+    origin_xyz:
+    - -0.0
+    - -0.0
+    - 0.058833
+    origin_rpy:
+    - 0
+    - 0
+    - 0
+  LeftShoulder:
+    parent: Spine2
+    child: LeftShoulder
+    origin_xyz:
+    - -0.007402
+    - 0.03
+    - 0.09873
+    origin_rpy:
+    - 0
+    - 0
+    - 0
+  LeftArm:
+    parent: LeftShoulder
+    child: LeftArm
+    origin_xyz:
+    - 0.0
+    - 0.056421
+    - 0.0
+    origin_rpy:
+    - 0
+    - 0
+    - 0
+  LeftForeArm:
+    parent: LeftArm
+    child: LeftForeArm
+    origin_xyz:
+    - -0.0
+    - 0.165
+    - -0.0
+    origin_rpy:
+    - 0
+    - 0
+    - 0
+  LeftHand:
+    parent: LeftForeArm
+    child: LeftHand
+    origin_xyz:
+    - 0.0
+    - 0.126
+    - -0.0
+    origin_rpy:
+    - 0
+    - 0
+    - 0
+  RightShoulder:
+    parent: Spine2
+    child: RightShoulder
+    origin_xyz:
+    - -0.007402
+    - -0.03
+    - 0.09873
+    origin_rpy:
+    - 0
+    - 0
+    - 0
+  RightArm:
+    parent: RightShoulder
+    child: RightArm
+    origin_xyz:
+    - 0.0
+    - -0.056421
+    - 0.0
+    origin_rpy:
+    - 0
+    - 0
+    - 0
+  RightForeArm:
+    parent: RightArm
+    child: RightForeArm
+    origin_xyz:
+    - 0.0
+    - -0.165001
+    - 0.0
+    origin_rpy:
+    - 0
+    - 0
+    - 0
+  RightHand:
+    parent: RightForeArm
+    child: RightHand
+    origin_xyz:
+    - 1.0e-06
+    - -0.125999
+    - 2.0e-06
+    origin_rpy:
+    - 0
+    - 0
+    - 0

@@ -1,0 +1,526 @@
+robot_name: custom_g1_bot
+root_name_map: pelvis
+base_mass: 0.0
+default_motor:
+  effort: 0
+  velocity: 0
+  geometry:
+    radius: 0.04
+    length: 0.05
+joints:
+  Spine:
+    rotation_order: &id001
+    - Z
+    active_dof: *id001
+    naming:
+      Z:
+        link: waist_yaw_link
+        joint: waist_yaw_joint
+    limits:
+      Z:
+        lower: -3.14
+        upper: 3.14
+        effort: 25.0
+        velocity: 20.0
+    motor_geometry:
+      Z:
+        radius: 0.0275
+        length: 0.048
+    motor_inertial:
+      Z:
+        mass: 0.38
+        inertia:
+          ixx: 0.00014480375
+          iyy: 0.00014480375
+          izz: 0.0001436875
+  Spine2:
+    rotation_order: &id002
+    - X
+    - Y
+    active_dof: *id002
+    naming:
+      X:
+        link: waist_roll_link
+        joint: waist_roll_joint
+      Y:
+        link: torso_pitch_link
+        joint: torso_pitch_joint
+    limits:
+      X:
+        lower: -3.14
+        upper: 3.14
+        effort: 25.0
+        velocity: 20.0
+      Y:
+        lower: -3.14
+        upper: 3.14
+        effort: 25.0
+        velocity: 20.0
+    motor_geometry:
+      X:
+        radius: 0.0275
+        length: 0.048
+      Y:
+        radius: 0.0275
+        length: 0.048
+    motor_inertial:
+      X:
+        mass: 0.38
+        inertia:
+          ixx: 0.00014480375
+          iyy: 0.00014480375
+          izz: 0.0001436875
+      Y:
+        mass: 0.38
+        inertia:
+          ixx: 0.00014480375
+          iyy: 0.00014480375
+          izz: 0.0001436875
+  LeftUpLeg:
+    rotation_order: &id003
+    - Y
+    - X
+    - Z
+    active_dof: *id003
+    naming:
+      Y:
+        link: left_hip_pitch_link
+        joint: left_hip_pitch_joint
+      X:
+        link: left_hip_roll_link
+        joint: left_hip_roll_joint
+      Z:
+        link: left_hip_yaw_link
+        joint: left_hip_yaw_joint
+    limits:
+      Y:
+        lower: -3.14
+        upper: 3.14
+        effort: 55.0
+        velocity: 20.0
+      X:
+        lower: -3.14
+        upper: 3.14
+        effort: 25.0
+        velocity: 20.0
+      Z:
+        lower: -3.14
+        upper: 3.14
+        effort: 25.0
+        velocity: 20.0
+    motor_geometry:
+      Y:
+        radius: 0.0315
+        length: 0.0502
+      X:
+        radius: 0.0275
+        length: 0.048
+      Z:
+        radius: 0.0275
+        length: 0.048
+    motor_inertial:
+      Y:
+        mass: 0.48
+        inertia:
+          ixx: 0.0002198716
+          iyy: 0.0002198716
+          izz: 0.00023814000000000002
+      X:
+        mass: 0.38
+        inertia:
+          ixx: 0.00014480375
+          iyy: 0.00014480375
+          izz: 0.0001436875
+      Z:
+        mass: 0.38
+        inertia:
+          ixx: 0.00014480375
+          iyy: 0.00014480375
+          izz: 0.0001436875
+  RightUpLeg:
+    rotation_order: &id004
+    - Y
+    - X
+    - Z
+    active_dof: *id004
+    naming:
+      Y:
+        link: right_hip_pitch_link
+        joint: right_hip_pitch_joint
+      X:
+        link: right_hip_roll_link
+        joint: right_hip_roll_joint
+      Z:
+        link: right_hip_yaw_link
+        joint: right_hip_yaw_joint
+    limits:
+      Y:
+        lower: -3.14
+        upper: 3.14
+        effort: 55.0
+        velocity: 20.0
+      X:
+        lower: -3.14
+        upper: 3.14
+        effort: 25.0
+        velocity: 20.0
+      Z:
+        lower: -3.14
+        upper: 3.14
+        effort: 25.0
+        velocity: 20.0
+    motor_geometry:
+      Y:
+        radius: 0.0315
+        length: 0.0502
+      X:
+        radius: 0.0275
+        length: 0.048
+      Z:
+        radius: 0.0275
+        length: 0.048
+    motor_inertial:
+      Y:
+        mass: 0.48
+        inertia:
+          ixx: 0.0002198716
+          iyy: 0.0002198716
+          izz: 0.00023814000000000002
+      X:
+        mass: 0.38
+        inertia:
+          ixx: 0.00014480375
+          iyy: 0.00014480375
+          izz: 0.0001436875
+      Z:
+        mass: 0.38
+        inertia:
+          ixx: 0.00014480375
+          iyy: 0.00014480375
+          izz: 0.0001436875
+  LeftLeg:
+    rotation_order: &id005
+    - Y
+    active_dof: *id005
+    naming:
+      Y:
+        link: left_knee_link
+        joint: left_knee_joint
+    limits:
+      Y:
+        lower: -3.14
+        upper: 3.14
+        effort: 55.0
+        velocity: 20.0
+    motor_geometry:
+      Y:
+        radius: 0.0315
+        length: 0.0502
+    motor_inertial:
+      Y:
+        mass: 0.48
+        inertia:
+          ixx: 0.0002198716
+          iyy: 0.0002198716
+          izz: 0.00023814000000000002
+  RightLeg:
+    rotation_order: &id006
+    - Y
+    active_dof: *id006
+    naming:
+      Y:
+        link: right_knee_link
+        joint: right_knee_joint
+    limits:
+      Y:
+        lower: -3.14
+        upper: 3.14
+        effort: 55.0
+        velocity: 20.0
+    motor_geometry:
+      Y:
+        radius: 0.0315
+        length: 0.0502
+    motor_inertial:
+      Y:
+        mass: 0.48
+        inertia:
+          ixx: 0.0002198716
+          iyy: 0.0002198716
+          izz: 0.00023814000000000002
+  LeftFoot:
+    rotation_order: &id007
+    - Y
+    - X
+    active_dof: *id007
+    naming:
+      Y:
+        link: left_ankle_pitch_link
+        joint: left_ankle_pitch_joint
+      X:
+        link: left_ankle_roll_link
+        joint: left_ankle_roll_joint
+    limits:
+      Y:
+        lower: -3.14
+        upper: 3.14
+        effort: 10.0
+        velocity: 20.0
+      X:
+        lower: -3.14
+        upper: 3.14
+        effort: 10.0
+        velocity: 20.0
+    motor_geometry:
+      Y:
+        radius: 0.021
+        length: 0.0415
+      X:
+        radius: 0.021
+        length: 0.0415
+    motor_inertial:
+      Y:
+        mass: 0.28
+        inertia:
+          ixx: 7.105583333333335e-05
+          iyy: 7.105583333333335e-05
+          izz: 6.174000000000002e-05
+      X:
+        mass: 0.28
+        inertia:
+          ixx: 7.105583333333335e-05
+          iyy: 7.105583333333335e-05
+          izz: 6.174000000000002e-05
+  RightFoot:
+    rotation_order: &id008
+    - Y
+    - X
+    active_dof: *id008
+    naming:
+      Y:
+        link: right_ankle_pitch_link
+        joint: right_ankle_pitch_joint
+      X:
+        link: right_ankle_roll_link
+        joint: right_ankle_roll_joint
+    limits:
+      Y:
+        lower: -3.14
+        upper: 3.14
+        effort: 10.0
+        velocity: 20.0
+      X:
+        lower: -3.14
+        upper: 3.14
+        effort: 10.0
+        velocity: 20.0
+    motor_geometry:
+      Y:
+        radius: 0.021
+        length: 0.0415
+      X:
+        radius: 0.021
+        length: 0.0415
+    motor_inertial:
+      Y:
+        mass: 0.28
+        inertia:
+          ixx: 7.105583333333335e-05
+          iyy: 7.105583333333335e-05
+          izz: 6.174000000000002e-05
+      X:
+        mass: 0.28
+        inertia:
+          ixx: 7.105583333333335e-05
+          iyy: 7.105583333333335e-05
+          izz: 6.174000000000002e-05
+  LeftArm:
+    rotation_order: &id009
+    - Y
+    - X
+    - Z
+    active_dof: *id009
+    naming:
+      Y:
+        link: left_shoulder_pitch_link
+        joint: left_shoulder_pitch_joint
+      X:
+        link: left_shoulder_roll_link
+        joint: left_shoulder_roll_joint
+      Z:
+        link: left_shoulder_yaw_link
+        joint: left_shoulder_yaw_joint
+    limits:
+      Y:
+        lower: -3.14
+        upper: 3.14
+        effort: 10.0
+        velocity: 20.0
+      X:
+        lower: -3.14
+        upper: 3.14
+        effort: 10.0
+        velocity: 20.0
+      Z:
+        lower: -3.14
+        upper: 3.14
+        effort: 10.0
+        velocity: 20.0
+    motor_geometry:
+      Y:
+        radius: 0.021
+        length: 0.0415
+      X:
+        radius: 0.021
+        length: 0.0415
+      Z:
+        radius: 0.021
+        length: 0.0415
+    motor_inertial:
+      Y:
+        mass: 0.28
+        inertia:
+          ixx: 7.105583333333335e-05
+          iyy: 7.105583333333335e-05
+          izz: 6.174000000000002e-05
+      X:
+        mass: 0.28
+        inertia:
+          ixx: 7.105583333333335e-05
+          iyy: 7.105583333333335e-05
+          izz: 6.174000000000002e-05
+      Z:
+        mass: 0.28
+        inertia:
+          ixx: 7.105583333333335e-05
+          iyy: 7.105583333333335e-05
+          izz: 6.174000000000002e-05
+  RightArm:
+    rotation_order: &id010
+    - Y
+    - X
+    - Z
+    active_dof: *id010
+    naming:
+      Y:
+        link: right_shoulder_pitch_link
+        joint: right_shoulder_pitch_joint
+      X:
+        link: right_shoulder_roll_link
+        joint: right_shoulder_roll_joint
+      Z:
+        link: right_shoulder_yaw_link
+        joint: right_shoulder_yaw_joint
+    limits:
+      Y:
+        lower: -3.14
+        upper: 3.14
+        effort: 10.0
+        velocity: 20.0
+      X:
+        lower: -3.14
+        upper: 3.14
+        effort: 10.0
+        velocity: 20.0
+      Z:
+        lower: -3.14
+        upper: 3.14
+        effort: 10.0
+        velocity: 20.0
+    motor_geometry:
+      Y:
+        radius: 0.021
+        length: 0.0415
+      X:
+        radius: 0.021
+        length: 0.0415
+      Z:
+        radius: 0.021
+        length: 0.0415
+    motor_inertial:
+      Y:
+        mass: 0.28
+        inertia:
+          ixx: 7.105583333333335e-05
+          iyy: 7.105583333333335e-05
+          izz: 6.174000000000002e-05
+      X:
+        mass: 0.28
+        inertia:
+          ixx: 7.105583333333335e-05
+          iyy: 7.105583333333335e-05
+          izz: 6.174000000000002e-05
+      Z:
+        mass: 0.28
+        inertia:
+          ixx: 7.105583333333335e-05
+          iyy: 7.105583333333335e-05
+          izz: 6.174000000000002e-05
+  LeftForeArm:
+    rotation_order: &id011
+    - Z
+    active_dof: *id011
+    naming:
+      Z:
+        link: left_elbow_link
+        joint: left_elbow_joint
+    limits:
+      Z:
+        lower: -3.14
+        upper: 3.14
+        effort: 10.0
+        velocity: 20.0
+    motor_geometry:
+      Z:
+        radius: 0.021
+        length: 0.0415
+    motor_inertial:
+      Z:
+        mass: 0.28
+        inertia:
+          ixx: 7.105583333333335e-05
+          iyy: 7.105583333333335e-05
+          izz: 6.174000000000002e-05
+  RightForeArm:
+    rotation_order: &id012
+    - Z
+    active_dof: *id012
+    naming:
+      Z:
+        link: right_elbow_link
+        joint: right_elbow_joint
+    limits:
+      Z:
+        lower: -3.14
+        upper: 3.14
+        effort: 10.0
+        velocity: 20.0
+    motor_geometry:
+      Z:
+        radius: 0.021
+        length: 0.0415
+    motor_inertial:
+      Z:
+        mass: 0.28
+        inertia:
+          ixx: 7.105583333333335e-05
+          iyy: 7.105583333333335e-05
+          izz: 6.174000000000002e-05
+attachments:
+  torso_pitch_link:
+  - name: battery_pack
+    mass: 2
+    type: box
+    dims:
+    - 0.08
+    - 0.08
+    - 0.1
+    pos:
+    - 0
+    - 0
+    - 0.08
+    rpy:
+    - 0
+    - 0
+    - 0
+    color: Motor

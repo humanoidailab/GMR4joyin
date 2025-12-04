@@ -1,0 +1,457 @@
+<robot name="custom_g1_bot">
+  <mujoco>
+    <compiler meshdir="meshes" discardvisual="false"/>
+  </mujoco>
+
+  <!-- [CAUTION] uncomment when convert to mujoco -->
+  <link name="world"></link>
+  <joint name="floating_base_joint" type="floating">
+    <parent link="world"/>
+    <child link="pelvis"/>
+  </joint>
+  <link name="pelvis">
+    <inertial>
+      <mass value="0.0100"/>
+      <origin xyz="0.000000 0.000000 0.000000" rpy="0 0 0"/>
+      <inertia ixx="0.000010" ixy="0" ixz="0" iyy="0.000010" iyz="0" izz="0.000010"/>
+    </inertial>
+    <visual><origin xyz="0.0000 0.0000 0.0000" rpy="0.0000 0.0000 0.0000"/><geometry><sphere radius="0.03"/></geometry><material name="Base"><color rgba="0.2 0.2 0.2 1"/></material></visual>
+    <collision><origin xyz="0.0000 0.0000 0.0000" rpy="0.0000 0.0000 0.0000"/><geometry><sphere radius="0.03"/></geometry></collision>
+  </link>
+  <link name="left_hip_pitch_link">
+    <inertial>
+      <mass value="0.4800"/>
+      <origin xyz="0.000000 0.000000 0.000000" rpy="0 0 0"/>
+      <inertia ixx="0.000220" ixy="0" ixz="0" iyy="0.000220" iyz="0" izz="0.000238"/>
+    </inertial>
+    <visual><origin xyz="0.0000 0.0000 0.0000" rpy="1.5708 0 0"/><geometry><cylinder radius="0.0315" length="0.0502"/></geometry><material name="Motor"><color rgba="0.8 0.2 0.2 1"/></material></visual>
+    <collision><origin xyz="0.0000 0.0000 0.0000" rpy="1.5708 0 0"/><geometry><cylinder radius="0.0315" length="0.0502"/></geometry></collision>
+  </link>
+  <link name="left_hip_roll_link">
+    <inertial>
+      <mass value="0.3800"/>
+      <origin xyz="0.000000 0.000000 0.000000" rpy="0 0 0"/>
+      <inertia ixx="0.000145" ixy="0" ixz="0" iyy="0.000145" iyz="0" izz="0.000144"/>
+    </inertial>
+    <visual><origin xyz="0.0000 0.0000 0.0000" rpy="0 1.5708 0"/><geometry><cylinder radius="0.0275" length="0.048"/></geometry><material name="Motor"><color rgba="0.8 0.2 0.2 1"/></material></visual>
+    <collision><origin xyz="0.0000 0.0000 0.0000" rpy="0 1.5708 0"/><geometry><cylinder radius="0.0275" length="0.048"/></geometry></collision>
+  </link>
+  <link name="left_hip_yaw_link">
+    <inertial>
+      <mass value="0.4048"/>
+      <origin xyz="0.000000 0.000000 -0.006667" rpy="0 0 0"/>
+      <inertia ixx="0.000503" ixy="0" ixz="0" iyy="0.000503" iyz="0" izz="0.000149"/>
+    </inertial>
+    <visual><origin xyz="0.0000 0.0000 0.0000" rpy="0 0 0"/><geometry><cylinder radius="0.0275" length="0.048"/></geometry><material name="Motor"><color rgba="0.8 0.2 0.2 1"/></material></visual><visual><origin xyz="0.0000 0.0000 -0.1087" rpy="0.0000 3.1416 0.0000"/><geometry><cylinder radius="0.02" length="0.1975"/></geometry><material name="Bone"><color rgba="0.5 0.5 0.5 1"/></material></visual>
+    <collision><origin xyz="0.0000 0.0000 0.0000" rpy="0 0 0"/><geometry><cylinder radius="0.0275" length="0.048"/></geometry></collision>
+  </link>
+  <link name="left_knee_link">
+    <inertial>
+      <mass value="0.5041"/>
+      <origin xyz="0.000000 0.000000 -0.005066" rpy="0 0 0"/>
+      <inertia ixx="0.000554" ixy="0" ixz="0" iyy="0.000554" iyz="0" izz="0.000243"/>
+    </inertial>
+    <visual><origin xyz="0.0000 0.0000 0.0000" rpy="1.5708 0 0"/><geometry><cylinder radius="0.0315" length="0.0502"/></geometry><material name="Motor"><color rgba="0.8 0.2 0.2 1"/></material></visual><visual><origin xyz="0.0000 0.0000 -0.1059" rpy="0.0000 3.1416 0.0000"/><geometry><cylinder radius="0.02" length="0.191861"/></geometry><material name="Bone"><color rgba="0.5 0.5 0.5 1"/></material></visual>
+    <collision><origin xyz="0.0000 0.0000 0.0000" rpy="1.5708 0 0"/><geometry><cylinder radius="0.0315" length="0.0502"/></geometry></collision>
+  </link>
+  <link name="left_ankle_pitch_link">
+    <inertial>
+      <mass value="0.2800"/>
+      <origin xyz="0.000000 0.000000 0.000000" rpy="0 0 0"/>
+      <inertia ixx="0.000071" ixy="0" ixz="0" iyy="0.000071" iyz="0" izz="0.000062"/>
+    </inertial>
+    <visual><origin xyz="0.0000 0.0000 0.0000" rpy="1.5708 0 0"/><geometry><cylinder radius="0.021" length="0.0415"/></geometry><material name="Motor"><color rgba="0.8 0.2 0.2 1"/></material></visual>
+    <collision><origin xyz="0.0000 0.0000 0.0000" rpy="1.5708 0 0"/><geometry><cylinder radius="0.021" length="0.0415"/></geometry></collision>
+  </link>
+  <link name="left_ankle_roll_link">
+    <inertial>
+      <mass value="0.6347"/>
+      <origin xyz="0.026041 0.000000 -0.009453" rpy="0 0 0"/>
+      <inertia ixx="0.000236" ixy="0" ixz="0" iyy="0.001219" iyz="0" izz="0.001229"/>
+    </inertial>
+    <visual><origin xyz="0.0000 0.0000 0.0000" rpy="0 1.5708 0"/><geometry><cylinder radius="0.021" length="0.0415"/></geometry><material name="Motor"><color rgba="0.8 0.2 0.2 1"/></material></visual><visual><origin xyz="0.0432 0.0000 0.0000" rpy="-0.0000 1.5708 0.0000"/><geometry><cylinder radius="0.015" length="0.06649999999999999"/></geometry><material name="Bone"><color rgba="0.5 0.5 0.5 1"/></material></visual><visual><origin xyz="0.0400 0.0000 -0.0200" rpy="0.0000 0.0000 0.0000"/><geometry><box size="0.16 0.06 0.015"/></geometry><material name="Foot"><color rgba="0.1 0.1 0.1 1"/></material></visual><visual><origin xyz="0.0865 0.0000 0.0000" rpy="0.0000 0.0000 0.0000"/><geometry><sphere radius="0.015"/></geometry><material name="End"><color rgba="0.5 0.5 0.5 1"/></material></visual>
+    <collision><origin xyz="0.0000 0.0000 0.0000" rpy="0 1.5708 0"/><geometry><cylinder radius="0.021" length="0.0415"/></geometry></collision><collision><origin xyz="0.0400 0.0000 -0.0200" rpy="0.0000 0.0000 0.0000"/><geometry><box size="0.16 0.06 0.015"/></geometry></collision><collision><origin xyz="0.0865 0.0000 0.0000" rpy="0.0000 0.0000 0.0000"/><geometry><sphere radius="0.015"/></geometry></collision>
+  </link>
+  <link name="right_hip_pitch_link">
+    <inertial>
+      <mass value="0.4800"/>
+      <origin xyz="0.000000 0.000000 0.000000" rpy="0 0 0"/>
+      <inertia ixx="0.000220" ixy="0" ixz="0" iyy="0.000220" iyz="0" izz="0.000238"/>
+    </inertial>
+    <visual><origin xyz="0.0000 0.0000 0.0000" rpy="1.5708 0 0"/><geometry><cylinder radius="0.0315" length="0.0502"/></geometry><material name="Motor"><color rgba="0.8 0.2 0.2 1"/></material></visual>
+    <collision><origin xyz="0.0000 0.0000 0.0000" rpy="1.5708 0 0"/><geometry><cylinder radius="0.0315" length="0.0502"/></geometry></collision>
+  </link>
+  <link name="right_hip_roll_link">
+    <inertial>
+      <mass value="0.3800"/>
+      <origin xyz="0.000000 0.000000 0.000000" rpy="0 0 0"/>
+      <inertia ixx="0.000145" ixy="0" ixz="0" iyy="0.000145" iyz="0" izz="0.000144"/>
+    </inertial>
+    <visual><origin xyz="0.0000 0.0000 0.0000" rpy="0 1.5708 0"/><geometry><cylinder radius="0.0275" length="0.048"/></geometry><material name="Motor"><color rgba="0.8 0.2 0.2 1"/></material></visual>
+    <collision><origin xyz="0.0000 0.0000 0.0000" rpy="0 1.5708 0"/><geometry><cylinder radius="0.0275" length="0.048"/></geometry></collision>
+  </link>
+  <link name="right_hip_yaw_link">
+    <inertial>
+      <mass value="0.4048"/>
+      <origin xyz="0.000000 0.000000 -0.006667" rpy="0 0 0"/>
+      <inertia ixx="0.000503" ixy="0" ixz="0" iyy="0.000503" iyz="0" izz="0.000149"/>
+    </inertial>
+    <visual><origin xyz="0.0000 0.0000 0.0000" rpy="0 0 0"/><geometry><cylinder radius="0.0275" length="0.048"/></geometry><material name="Motor"><color rgba="0.8 0.2 0.2 1"/></material></visual><visual><origin xyz="0.0000 0.0000 -0.1087" rpy="0.0000 3.1416 0.0000"/><geometry><cylinder radius="0.02" length="0.1975"/></geometry><material name="Bone"><color rgba="0.5 0.5 0.5 1"/></material></visual>
+    <collision><origin xyz="0.0000 0.0000 0.0000" rpy="0 0 0"/><geometry><cylinder radius="0.0275" length="0.048"/></geometry></collision>
+  </link>
+  <link name="right_knee_link">
+    <inertial>
+      <mass value="0.5041"/>
+      <origin xyz="0.000000 0.000000 -0.005066" rpy="0 0 0"/>
+      <inertia ixx="0.000554" ixy="0" ixz="0" iyy="0.000554" iyz="0" izz="0.000243"/>
+    </inertial>
+    <visual><origin xyz="0.0000 0.0000 0.0000" rpy="1.5708 0 0"/><geometry><cylinder radius="0.0315" length="0.0502"/></geometry><material name="Motor"><color rgba="0.8 0.2 0.2 1"/></material></visual><visual><origin xyz="0.0000 0.0000 -0.1059" rpy="0.0000 3.1416 0.0000"/><geometry><cylinder radius="0.02" length="0.191861"/></geometry><material name="Bone"><color rgba="0.5 0.5 0.5 1"/></material></visual>
+    <collision><origin xyz="0.0000 0.0000 0.0000" rpy="1.5708 0 0"/><geometry><cylinder radius="0.0315" length="0.0502"/></geometry></collision>
+  </link>
+  <link name="right_ankle_pitch_link">
+    <inertial>
+      <mass value="0.2800"/>
+      <origin xyz="0.000000 0.000000 0.000000" rpy="0 0 0"/>
+      <inertia ixx="0.000071" ixy="0" ixz="0" iyy="0.000071" iyz="0" izz="0.000062"/>
+    </inertial>
+    <visual><origin xyz="0.0000 0.0000 0.0000" rpy="1.5708 0 0"/><geometry><cylinder radius="0.021" length="0.0415"/></geometry><material name="Motor"><color rgba="0.8 0.2 0.2 1"/></material></visual>
+    <collision><origin xyz="0.0000 0.0000 0.0000" rpy="1.5708 0 0"/><geometry><cylinder radius="0.021" length="0.0415"/></geometry></collision>
+  </link>
+  <link name="right_ankle_roll_link">
+    <inertial>
+      <mass value="0.6347"/>
+      <origin xyz="0.026041 0.000000 -0.009453" rpy="0 0 0"/>
+      <inertia ixx="0.000236" ixy="0" ixz="0" iyy="0.001219" iyz="0" izz="0.001229"/>
+    </inertial>
+    <visual><origin xyz="0.0000 0.0000 0.0000" rpy="0 1.5708 0"/><geometry><cylinder radius="0.021" length="0.0415"/></geometry><material name="Motor"><color rgba="0.8 0.2 0.2 1"/></material></visual><visual><origin xyz="0.0432 0.0000 0.0000" rpy="-0.0000 1.5708 0.0000"/><geometry><cylinder radius="0.015" length="0.06649999999999999"/></geometry><material name="Bone"><color rgba="0.5 0.5 0.5 1"/></material></visual><visual><origin xyz="0.0400 0.0000 -0.0200" rpy="0.0000 0.0000 0.0000"/><geometry><box size="0.16 0.06 0.015"/></geometry><material name="Foot"><color rgba="0.1 0.1 0.1 1"/></material></visual><visual><origin xyz="0.0865 0.0000 0.0000" rpy="0.0000 0.0000 0.0000"/><geometry><sphere radius="0.015"/></geometry><material name="End"><color rgba="0.5 0.5 0.5 1"/></material></visual>
+    <collision><origin xyz="0.0000 0.0000 0.0000" rpy="0 1.5708 0"/><geometry><cylinder radius="0.021" length="0.0415"/></geometry></collision><collision><origin xyz="0.0400 0.0000 -0.0200" rpy="0.0000 0.0000 0.0000"/><geometry><box size="0.16 0.06 0.015"/></geometry></collision><collision><origin xyz="0.0865 0.0000 0.0000" rpy="0.0000 0.0000 0.0000"/><geometry><sphere radius="0.015"/></geometry></collision>
+  </link>
+  <link name="waist_yaw_link">
+    <inertial>
+      <mass value="0.3906"/>
+      <origin xyz="0.000000 0.000000 0.001693" rpy="0 0 0"/>
+      <inertia ixx="0.000198" ixy="0" ixz="0" iyy="0.000198" iyz="0" izz="0.000146"/>
+    </inertial>
+    <visual><origin xyz="0.0000 0.0000 0.0000" rpy="0 0 0"/><geometry><cylinder radius="0.0275" length="0.048"/></geometry><material name="Motor"><color rgba="0.8 0.2 0.2 1"/></material></visual><visual><origin xyz="0.0000 0.0000 0.0315" rpy="0.0000 0.0000 0.0000"/><geometry><cylinder radius="0.02" length="0.04293999999999999"/></geometry><material name="Bone"><color rgba="0.5 0.5 0.5 1"/></material></visual><visual><origin xyz="0.0000 0.0000 0.0938" rpy="0.0000 0.0000 0.0000"/><geometry><cylinder radius="0.02" length="0.04171599999999999"/></geometry><material name="Bone"><color rgba="0.5 0.5 0.5 1"/></material></visual>
+    <collision><origin xyz="0.0000 0.0000 0.0000" rpy="0 0 0"/><geometry><cylinder radius="0.0275" length="0.048"/></geometry></collision>
+  </link>
+  <link name="waist_roll_link">
+    <inertial>
+      <mass value="0.3800"/>
+      <origin xyz="0.000000 0.000000 0.000000" rpy="0 0 0"/>
+      <inertia ixx="0.000145" ixy="0" ixz="0" iyy="0.000145" iyz="0" izz="0.000144"/>
+    </inertial>
+    <visual><origin xyz="0.0000 0.0000 0.0000" rpy="0 1.5708 0"/><geometry><cylinder radius="0.0275" length="0.048"/></geometry><material name="Motor"><color rgba="0.8 0.2 0.2 1"/></material></visual>
+    <collision><origin xyz="0.0000 0.0000 0.0000" rpy="0 1.5708 0"/><geometry><cylinder radius="0.0275" length="0.048"/></geometry></collision>
+  </link>
+  <link name="torso_pitch_link">
+    <inertial>
+      <mass value="2.4578"/>
+      <origin xyz="-0.000028 0.000000 0.069968" rpy="0 0 0"/>
+      <inertia ixx="0.005736" ixy="0" ixz="0" iyy="0.005706" iyz="0" izz="0.002319"/>
+    </inertial>
+    <visual><origin xyz="0.0000 0.0000 0.0000" rpy="1.5708 0 0"/><geometry><cylinder radius="0.0275" length="0.048"/></geometry><material name="Motor"><color rgba="0.8 0.2 0.2 1"/></material></visual><visual><origin xyz="0.0000 0.0000 0.0646" rpy="0.0000 0.0000 0.0000"/><geometry><cylinder radius="0.02" length="0.109164"/></geometry><material name="Bone"><color rgba="0.5 0.5 0.5 1"/></material></visual><visual><origin xyz="0.0000 0.0000 0.1586" rpy="0.0000 0.0000 0.0000"/><geometry><cylinder radius="0.02" length="0.03883299999999999"/></geometry><material name="Bone"><color rgba="0.5 0.5 0.5 1"/></material></visual><visual><origin xyz="0.0000 0.0000 0.1880" rpy="0.0000 0.0000 0.0000"/><geometry><sphere radius="0.015"/></geometry><material name="End"><color rgba="0.5 0.5 0.5 1"/></material></visual><visual><origin xyz="-0.0074 0.0582 0.0987" rpy="-1.5708 0.0000 0.0000"/><geometry><cylinder radius="0.02" length="0.036420999999999995"/></geometry><material name="Bone"><color rgba="0.5 0.5 0.5 1"/></material></visual><visual><origin xyz="-0.0074 -0.0582 0.0987" rpy="1.5708 0.0000 0.0000"/><geometry><cylinder radius="0.02" length="0.036420999999999995"/></geometry><material name="Bone"><color rgba="0.5 0.5 0.5 1"/></material></visual><visual><origin xyz="0.0000 0.0000 0.0800" rpy="0.0000 0.0000 0.0000"/><geometry><box size="0.08 0.08 0.1"/></geometry><material name="Motor"><color rgba="0.8 0.2 0.2 1"/></material></visual>
+    <collision><origin xyz="0.0000 0.0000 0.0000" rpy="1.5708 0 0"/><geometry><cylinder radius="0.0275" length="0.048"/></geometry></collision><collision><origin xyz="0.0000 0.0000 0.1880" rpy="0.0000 0.0000 0.0000"/><geometry><sphere radius="0.015"/></geometry></collision><collision><origin xyz="0.0000 0.0000 0.0800" rpy="0.0000 0.0000 0.0000"/><geometry><box size="0.08 0.08 0.1"/></geometry></collision>
+  </link>
+  <link name="left_shoulder_pitch_link">
+    <inertial>
+      <mass value="0.2800"/>
+      <origin xyz="0.000000 0.000000 0.000000" rpy="0 0 0"/>
+      <inertia ixx="0.000071" ixy="0" ixz="0" iyy="0.000071" iyz="0" izz="0.000062"/>
+    </inertial>
+    <visual><origin xyz="0.0000 0.0000 0.0000" rpy="1.5708 0 0"/><geometry><cylinder radius="0.021" length="0.0415"/></geometry><material name="Motor"><color rgba="0.8 0.2 0.2 1"/></material></visual>
+    <collision><origin xyz="0.0000 0.0000 0.0000" rpy="1.5708 0 0"/><geometry><cylinder radius="0.021" length="0.0415"/></geometry></collision>
+  </link>
+  <link name="left_shoulder_roll_link">
+    <inertial>
+      <mass value="0.2800"/>
+      <origin xyz="0.000000 0.000000 0.000000" rpy="0 0 0"/>
+      <inertia ixx="0.000071" ixy="0" ixz="0" iyy="0.000071" iyz="0" izz="0.000062"/>
+    </inertial>
+    <visual><origin xyz="0.0000 0.0000 0.0000" rpy="0 1.5708 0"/><geometry><cylinder radius="0.021" length="0.0415"/></geometry><material name="Motor"><color rgba="0.8 0.2 0.2 1"/></material></visual>
+    <collision><origin xyz="0.0000 0.0000 0.0000" rpy="0 1.5708 0"/><geometry><cylinder radius="0.021" length="0.0415"/></geometry></collision>
+  </link>
+  <link name="left_shoulder_yaw_link">
+    <inertial>
+      <mass value="0.2982"/>
+      <origin xyz="0.000000 0.005041 0.000000" rpy="0 0 0"/>
+      <inertia ixx="0.000221" ixy="0" ixz="0" iyy="0.000105" iyz="0" izz="0.000182"/>
+    </inertial>
+    <visual><origin xyz="0.0000 0.0000 0.0000" rpy="0 0 0"/><geometry><cylinder radius="0.021" length="0.0415"/></geometry><material name="Motor"><color rgba="0.8 0.2 0.2 1"/></material></visual><visual><origin xyz="0.0000 0.0825 0.0000" rpy="-1.5708 0.0000 0.0000"/><geometry><cylinder radius="0.02" length="0.14500000000000002"/></geometry><material name="Bone"><color rgba="0.5 0.5 0.5 1"/></material></visual>
+    <collision><origin xyz="0.0000 0.0000 0.0000" rpy="0 0 0"/><geometry><cylinder radius="0.021" length="0.0415"/></geometry></collision>
+  </link>
+  <link name="left_elbow_link">
+    <inertial>
+      <mass value="0.3433"/>
+      <origin xyz="0.000000 0.020795 0.000000" rpy="0 0 0"/>
+      <inertia ixx="0.000788" ixy="0" ixz="0" iyy="0.000089" iyz="0" izz="0.000767"/>
+    </inertial>
+    <visual><origin xyz="0.0000 0.0000 0.0000" rpy="0 0 0"/><geometry><cylinder radius="0.021" length="0.0415"/></geometry><material name="Motor"><color rgba="0.8 0.2 0.2 1"/></material></visual><visual><origin xyz="0.0000 0.0630 0.0000" rpy="-1.5708 0.0000 0.0000"/><geometry><cylinder radius="0.02" length="0.106"/></geometry><material name="Bone"><color rgba="0.5 0.5 0.5 1"/></material></visual><visual><origin xyz="0.0000 0.1260 0.0000" rpy="0.0000 0.0000 0.0000"/><geometry><sphere radius="0.015"/></geometry><material name="End"><color rgba="0.5 0.5 0.5 1"/></material></visual>
+    <collision><origin xyz="0.0000 0.0000 0.0000" rpy="0 0 0"/><geometry><cylinder radius="0.021" length="0.0415"/></geometry></collision><collision><origin xyz="0.0000 0.1260 0.0000" rpy="0.0000 0.0000 0.0000"/><geometry><sphere radius="0.015"/></geometry></collision>
+  </link>
+  <link name="right_shoulder_pitch_link">
+    <inertial>
+      <mass value="0.2800"/>
+      <origin xyz="0.000000 0.000000 0.000000" rpy="0 0 0"/>
+      <inertia ixx="0.000071" ixy="0" ixz="0" iyy="0.000071" iyz="0" izz="0.000062"/>
+    </inertial>
+    <visual><origin xyz="0.0000 0.0000 0.0000" rpy="1.5708 0 0"/><geometry><cylinder radius="0.021" length="0.0415"/></geometry><material name="Motor"><color rgba="0.8 0.2 0.2 1"/></material></visual>
+    <collision><origin xyz="0.0000 0.0000 0.0000" rpy="1.5708 0 0"/><geometry><cylinder radius="0.021" length="0.0415"/></geometry></collision>
+  </link>
+  <link name="right_shoulder_roll_link">
+    <inertial>
+      <mass value="0.2800"/>
+      <origin xyz="0.000000 0.000000 0.000000" rpy="0 0 0"/>
+      <inertia ixx="0.000071" ixy="0" ixz="0" iyy="0.000071" iyz="0" izz="0.000062"/>
+    </inertial>
+    <visual><origin xyz="0.0000 0.0000 0.0000" rpy="0 1.5708 0"/><geometry><cylinder radius="0.021" length="0.0415"/></geometry><material name="Motor"><color rgba="0.8 0.2 0.2 1"/></material></visual>
+    <collision><origin xyz="0.0000 0.0000 0.0000" rpy="0 1.5708 0"/><geometry><cylinder radius="0.021" length="0.0415"/></geometry></collision>
+  </link>
+  <link name="right_shoulder_yaw_link">
+    <inertial>
+      <mass value="0.2982"/>
+      <origin xyz="0.000000 -0.005041 0.000000" rpy="0 0 0"/>
+      <inertia ixx="0.000221" ixy="0" ixz="0" iyy="0.000105" iyz="0" izz="0.000182"/>
+    </inertial>
+    <visual><origin xyz="0.0000 0.0000 0.0000" rpy="0 0 0"/><geometry><cylinder radius="0.021" length="0.0415"/></geometry><material name="Motor"><color rgba="0.8 0.2 0.2 1"/></material></visual><visual><origin xyz="0.0000 -0.0825 0.0000" rpy="1.5708 0.0000 0.0000"/><geometry><cylinder radius="0.02" length="0.14500100000000002"/></geometry><material name="Bone"><color rgba="0.5 0.5 0.5 1"/></material></visual>
+    <collision><origin xyz="0.0000 0.0000 0.0000" rpy="0 0 0"/><geometry><cylinder radius="0.021" length="0.0415"/></geometry></collision>
+  </link>
+  <link name="right_elbow_link">
+    <inertial>
+      <mass value="0.3433"/>
+      <origin xyz="0.000000 -0.020794 0.000000" rpy="0 0 0"/>
+      <inertia ixx="0.000788" ixy="0" ixz="0" iyy="0.000089" iyz="0" izz="0.000767"/>
+    </inertial>
+    <visual><origin xyz="0.0000 0.0000 0.0000" rpy="0 0 0"/><geometry><cylinder radius="0.021" length="0.0415"/></geometry><material name="Motor"><color rgba="0.8 0.2 0.2 1"/></material></visual><visual><origin xyz="0.0000 -0.0630 0.0000" rpy="1.5708 0.0000 0.0000"/><geometry><cylinder radius="0.02" length="0.10599900001984143"/></geometry><material name="Bone"><color rgba="0.5 0.5 0.5 1"/></material></visual><visual><origin xyz="0.0000 -0.1260 0.0000" rpy="0.0000 0.0000 0.0000"/><geometry><sphere radius="0.015"/></geometry><material name="End"><color rgba="0.5 0.5 0.5 1"/></material></visual>
+    <collision><origin xyz="0.0000 0.0000 0.0000" rpy="0 0 0"/><geometry><cylinder radius="0.021" length="0.0415"/></geometry></collision><collision><origin xyz="0.0000 -0.1260 0.0000" rpy="0.0000 0.0000 0.0000"/><geometry><sphere radius="0.015"/></geometry></collision>
+  </link>
+  <joint name="left_hip_pitch_joint" type="revolute">
+    <parent link="pelvis"/>
+    <child link="left_hip_pitch_link"/>
+    <origin xyz="0.0093 0.0527 0.0005" rpy="0.0000 0.0000 0.0000"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit lower="-3.14" upper="3.14" effort="55.0" velocity="20.0"/>
+  </joint>
+
+  <joint name="left_hip_roll_joint" type="revolute">
+    <parent link="left_hip_pitch_link"/>
+    <child link="left_hip_roll_link"/>
+    <origin xyz="0.0000 0.0000 0.0000" rpy="0.0000 0.0000 0.0000"/>
+    <axis xyz="1 0 0"/>
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit lower="-3.14" upper="3.14" effort="25.0" velocity="20.0"/>
+  </joint>
+
+  <joint name="left_hip_yaw_joint" type="revolute">
+    <parent link="left_hip_roll_link"/>
+    <child link="left_hip_yaw_link"/>
+    <origin xyz="0.0000 0.0000 0.0000" rpy="0.0000 0.0000 0.0000"/>
+    <axis xyz="0 0 1"/>
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit lower="-3.14" upper="3.14" effort="25.0" velocity="20.0"/>
+  </joint>
+
+  <joint name="left_knee_joint" type="revolute">
+    <parent link="left_hip_yaw_link"/>
+    <child link="left_knee_link"/>
+    <origin xyz="0.0000 0.0000 -0.2175" rpy="0.0000 0.0000 0.0000"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit lower="-3.14" upper="3.14" effort="55.0" velocity="20.0"/>
+  </joint>
+
+  <joint name="left_ankle_pitch_joint" type="revolute">
+    <parent link="left_knee_link"/>
+    <child link="left_ankle_pitch_link"/>
+    <origin xyz="0.0000 0.0000 -0.2119" rpy="0.0000 0.0000 0.0000"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit lower="-3.14" upper="3.14" effort="10.0" velocity="20.0"/>
+  </joint>
+
+  <joint name="left_ankle_roll_joint" type="revolute">
+    <parent link="left_ankle_pitch_link"/>
+    <child link="left_ankle_roll_link"/>
+    <origin xyz="0.0000 0.0000 0.0000" rpy="0.0000 0.0000 0.0000"/>
+    <axis xyz="1 0 0"/>
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit lower="-3.14" upper="3.14" effort="10.0" velocity="20.0"/>
+  </joint>
+
+  <joint name="right_hip_pitch_joint" type="revolute">
+    <parent link="pelvis"/>
+    <child link="right_hip_pitch_link"/>
+    <origin xyz="0.0093 -0.0527 0.0005" rpy="0.0000 0.0000 0.0000"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit lower="-3.14" upper="3.14" effort="55.0" velocity="20.0"/>
+  </joint>
+
+  <joint name="right_hip_roll_joint" type="revolute">
+    <parent link="right_hip_pitch_link"/>
+    <child link="right_hip_roll_link"/>
+    <origin xyz="0.0000 0.0000 0.0000" rpy="0.0000 0.0000 0.0000"/>
+    <axis xyz="1 0 0"/>
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit lower="-3.14" upper="3.14" effort="25.0" velocity="20.0"/>
+  </joint>
+
+  <joint name="right_hip_yaw_joint" type="revolute">
+    <parent link="right_hip_roll_link"/>
+    <child link="right_hip_yaw_link"/>
+    <origin xyz="0.0000 0.0000 0.0000" rpy="0.0000 0.0000 0.0000"/>
+    <axis xyz="0 0 1"/>
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit lower="-3.14" upper="3.14" effort="25.0" velocity="20.0"/>
+  </joint>
+
+  <joint name="right_knee_joint" type="revolute">
+    <parent link="right_hip_yaw_link"/>
+    <child link="right_knee_link"/>
+    <origin xyz="0.0000 0.0000 -0.2175" rpy="0.0000 0.0000 0.0000"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit lower="-3.14" upper="3.14" effort="55.0" velocity="20.0"/>
+  </joint>
+
+  <joint name="right_ankle_pitch_joint" type="revolute">
+    <parent link="right_knee_link"/>
+    <child link="right_ankle_pitch_link"/>
+    <origin xyz="0.0000 0.0000 -0.2119" rpy="0.0000 0.0000 0.0000"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit lower="-3.14" upper="3.14" effort="10.0" velocity="20.0"/>
+  </joint>
+
+  <joint name="right_ankle_roll_joint" type="revolute">
+    <parent link="right_ankle_pitch_link"/>
+    <child link="right_ankle_roll_link"/>
+    <origin xyz="0.0000 0.0000 0.0000" rpy="0.0000 0.0000 0.0000"/>
+    <axis xyz="1 0 0"/>
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit lower="-3.14" upper="3.14" effort="10.0" velocity="20.0"/>
+  </joint>
+
+  <joint name="waist_yaw_joint" type="revolute">
+    <parent link="pelvis"/>
+    <child link="waist_yaw_link"/>
+    <origin xyz="-0.0130 0.0000 0.0345" rpy="0.0000 0.0000 0.0000"/>
+    <axis xyz="0 0 1"/>
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit lower="-3.14" upper="3.14" effort="25.0" velocity="20.0"/>
+  </joint>
+
+  <joint name="waist_roll_joint" type="revolute">
+    <parent link="waist_yaw_link"/>
+    <child link="waist_roll_link"/>
+    <origin xyz="0.0000 0.0000 0.1247" rpy="0.0000 0.0000 0.0000"/>
+    <axis xyz="1 0 0"/>
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit lower="-3.14" upper="3.14" effort="25.0" velocity="20.0"/>
+  </joint>
+
+  <joint name="torso_pitch_joint" type="revolute">
+    <parent link="waist_roll_link"/>
+    <child link="torso_pitch_link"/>
+    <origin xyz="0.0000 0.0000 0.0000" rpy="0.0000 0.0000 0.0000"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit lower="-3.14" upper="3.14" effort="25.0" velocity="20.0"/>
+  </joint>
+
+  <joint name="left_shoulder_pitch_joint" type="revolute">
+    <parent link="torso_pitch_link"/>
+    <child link="left_shoulder_pitch_link"/>
+    <origin xyz="-0.0074 0.0864 0.0987" rpy="0.0000 0.0000 0.0000"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit lower="-3.14" upper="3.14" effort="10.0" velocity="20.0"/>
+  </joint>
+
+  <joint name="left_shoulder_roll_joint" type="revolute">
+    <parent link="left_shoulder_pitch_link"/>
+    <child link="left_shoulder_roll_link"/>
+    <origin xyz="0.0000 0.0000 0.0000" rpy="0.0000 0.0000 0.0000"/>
+    <axis xyz="1 0 0"/>
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit lower="-3.14" upper="3.14" effort="10.0" velocity="20.0"/>
+  </joint>
+
+  <joint name="left_shoulder_yaw_joint" type="revolute">
+    <parent link="left_shoulder_roll_link"/>
+    <child link="left_shoulder_yaw_link"/>
+    <origin xyz="0.0000 0.0000 0.0000" rpy="0.0000 0.0000 0.0000"/>
+    <axis xyz="0 0 1"/>
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit lower="-3.14" upper="3.14" effort="10.0" velocity="20.0"/>
+  </joint>
+
+  <joint name="left_elbow_joint" type="revolute">
+    <parent link="left_shoulder_yaw_link"/>
+    <child link="left_elbow_link"/>
+    <origin xyz="0.0000 0.1650 0.0000" rpy="0.0000 0.0000 0.0000"/>
+    <axis xyz="0 0 1"/>
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit lower="-3.14" upper="3.14" effort="10.0" velocity="20.0"/>
+  </joint>
+
+  <joint name="right_shoulder_pitch_joint" type="revolute">
+    <parent link="torso_pitch_link"/>
+    <child link="right_shoulder_pitch_link"/>
+    <origin xyz="-0.0074 -0.0864 0.0987" rpy="0.0000 0.0000 0.0000"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit lower="-3.14" upper="3.14" effort="10.0" velocity="20.0"/>
+  </joint>
+
+  <joint name="right_shoulder_roll_joint" type="revolute">
+    <parent link="right_shoulder_pitch_link"/>
+    <child link="right_shoulder_roll_link"/>
+    <origin xyz="0.0000 0.0000 0.0000" rpy="0.0000 0.0000 0.0000"/>
+    <axis xyz="1 0 0"/>
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit lower="-3.14" upper="3.14" effort="10.0" velocity="20.0"/>
+  </joint>
+
+  <joint name="right_shoulder_yaw_joint" type="revolute">
+    <parent link="right_shoulder_roll_link"/>
+    <child link="right_shoulder_yaw_link"/>
+    <origin xyz="0.0000 0.0000 0.0000" rpy="0.0000 0.0000 0.0000"/>
+    <axis xyz="0 0 1"/>
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit lower="-3.14" upper="3.14" effort="10.0" velocity="20.0"/>
+  </joint>
+
+  <joint name="right_elbow_joint" type="revolute">
+    <parent link="right_shoulder_yaw_link"/>
+    <child link="right_elbow_link"/>
+    <origin xyz="0.0000 -0.1650 0.0000" rpy="0.0000 0.0000 0.0000"/>
+    <axis xyz="0 0 1"/>
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit lower="-3.14" upper="3.14" effort="10.0" velocity="20.0"/>
+  </joint>
+<transmission name="trans_left_hip_pitch_joint"><type>transmission_interface/SimpleTransmission</type><joint name="left_hip_pitch_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint><actuator name="motor_left_hip_pitch_joint"><mechanicalReduction>1</mechanicalReduction></actuator></transmission>
+<transmission name="trans_left_hip_roll_joint"><type>transmission_interface/SimpleTransmission</type><joint name="left_hip_roll_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint><actuator name="motor_left_hip_roll_joint"><mechanicalReduction>1</mechanicalReduction></actuator></transmission>
+<transmission name="trans_left_hip_yaw_joint"><type>transmission_interface/SimpleTransmission</type><joint name="left_hip_yaw_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint><actuator name="motor_left_hip_yaw_joint"><mechanicalReduction>1</mechanicalReduction></actuator></transmission>
+<transmission name="trans_left_knee_joint"><type>transmission_interface/SimpleTransmission</type><joint name="left_knee_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint><actuator name="motor_left_knee_joint"><mechanicalReduction>1</mechanicalReduction></actuator></transmission>
+<transmission name="trans_left_ankle_pitch_joint"><type>transmission_interface/SimpleTransmission</type><joint name="left_ankle_pitch_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint><actuator name="motor_left_ankle_pitch_joint"><mechanicalReduction>1</mechanicalReduction></actuator></transmission>
+<transmission name="trans_left_ankle_roll_joint"><type>transmission_interface/SimpleTransmission</type><joint name="left_ankle_roll_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint><actuator name="motor_left_ankle_roll_joint"><mechanicalReduction>1</mechanicalReduction></actuator></transmission>
+<transmission name="trans_right_hip_pitch_joint"><type>transmission_interface/SimpleTransmission</type><joint name="right_hip_pitch_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint><actuator name="motor_right_hip_pitch_joint"><mechanicalReduction>1</mechanicalReduction></actuator></transmission>
+<transmission name="trans_right_hip_roll_joint"><type>transmission_interface/SimpleTransmission</type><joint name="right_hip_roll_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint><actuator name="motor_right_hip_roll_joint"><mechanicalReduction>1</mechanicalReduction></actuator></transmission>
+<transmission name="trans_right_hip_yaw_joint"><type>transmission_interface/SimpleTransmission</type><joint name="right_hip_yaw_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint><actuator name="motor_right_hip_yaw_joint"><mechanicalReduction>1</mechanicalReduction></actuator></transmission>
+<transmission name="trans_right_knee_joint"><type>transmission_interface/SimpleTransmission</type><joint name="right_knee_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint><actuator name="motor_right_knee_joint"><mechanicalReduction>1</mechanicalReduction></actuator></transmission>
+<transmission name="trans_right_ankle_pitch_joint"><type>transmission_interface/SimpleTransmission</type><joint name="right_ankle_pitch_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint><actuator name="motor_right_ankle_pitch_joint"><mechanicalReduction>1</mechanicalReduction></actuator></transmission>
+<transmission name="trans_right_ankle_roll_joint"><type>transmission_interface/SimpleTransmission</type><joint name="right_ankle_roll_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint><actuator name="motor_right_ankle_roll_joint"><mechanicalReduction>1</mechanicalReduction></actuator></transmission>
+<transmission name="trans_waist_yaw_joint"><type>transmission_interface/SimpleTransmission</type><joint name="waist_yaw_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint><actuator name="motor_waist_yaw_joint"><mechanicalReduction>1</mechanicalReduction></actuator></transmission>
+<transmission name="trans_waist_roll_joint"><type>transmission_interface/SimpleTransmission</type><joint name="waist_roll_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint><actuator name="motor_waist_roll_joint"><mechanicalReduction>1</mechanicalReduction></actuator></transmission>
+<transmission name="trans_torso_pitch_joint"><type>transmission_interface/SimpleTransmission</type><joint name="torso_pitch_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint><actuator name="motor_torso_pitch_joint"><mechanicalReduction>1</mechanicalReduction></actuator></transmission>
+<transmission name="trans_left_shoulder_pitch_joint"><type>transmission_interface/SimpleTransmission</type><joint name="left_shoulder_pitch_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint><actuator name="motor_left_shoulder_pitch_joint"><mechanicalReduction>1</mechanicalReduction></actuator></transmission>
+<transmission name="trans_left_shoulder_roll_joint"><type>transmission_interface/SimpleTransmission</type><joint name="left_shoulder_roll_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint><actuator name="motor_left_shoulder_roll_joint"><mechanicalReduction>1</mechanicalReduction></actuator></transmission>
+<transmission name="trans_left_shoulder_yaw_joint"><type>transmission_interface/SimpleTransmission</type><joint name="left_shoulder_yaw_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint><actuator name="motor_left_shoulder_yaw_joint"><mechanicalReduction>1</mechanicalReduction></actuator></transmission>
+<transmission name="trans_left_elbow_joint"><type>transmission_interface/SimpleTransmission</type><joint name="left_elbow_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint><actuator name="motor_left_elbow_joint"><mechanicalReduction>1</mechanicalReduction></actuator></transmission>
+<transmission name="trans_right_shoulder_pitch_joint"><type>transmission_interface/SimpleTransmission</type><joint name="right_shoulder_pitch_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint><actuator name="motor_right_shoulder_pitch_joint"><mechanicalReduction>1</mechanicalReduction></actuator></transmission>
+<transmission name="trans_right_shoulder_roll_joint"><type>transmission_interface/SimpleTransmission</type><joint name="right_shoulder_roll_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint><actuator name="motor_right_shoulder_roll_joint"><mechanicalReduction>1</mechanicalReduction></actuator></transmission>
+<transmission name="trans_right_shoulder_yaw_joint"><type>transmission_interface/SimpleTransmission</type><joint name="right_shoulder_yaw_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint><actuator name="motor_right_shoulder_yaw_joint"><mechanicalReduction>1</mechanicalReduction></actuator></transmission>
+<transmission name="trans_right_elbow_joint"><type>transmission_interface/SimpleTransmission</type><joint name="right_elbow_joint"><hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface></joint><actuator name="motor_right_elbow_joint"><mechanicalReduction>1</mechanicalReduction></actuator></transmission>
+</robot>

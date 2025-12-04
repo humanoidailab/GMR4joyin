@@ -649,15 +649,12 @@
         <sphere radius="0.01" />
       </geometry>
     </visual>
-  
-
     <collision>
-
       <geometry>
         <sphere radius="0.01" />
       </geometry>
-
     </collision></link>
+
   <joint name="RightFoot_to_RightToe_rz" type="fixed">
     <parent link="RightFoot" />
     <child link="RightToe_rz" />
@@ -693,7 +690,6 @@
   
 
     <collision>
-
       <geometry>
         <sphere radius="0.01" />
       </geometry>

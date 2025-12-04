@@ -1,0 +1,53 @@
+{
+  "root_pos": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "root_rot": [
+    -0.7,
+    0.0,
+    0.0,
+    0.7
+  ],
+  "degrees": true,
+  "joints": {
+    "left_hip_pitch_joint": 0.0,
+    "left_hip_roll_joint": 0.0,
+    "left_hip_yaw_joint": 0.0,
+    "left_knee_joint": 0.0,
+    "left_ankle_pitch_joint": 0.0,
+    "left_ankle_roll_joint": 0.0,
+    "right_hip_pitch_joint": 0.0,
+    "right_hip_roll_joint": 0.0,
+    "right_hip_yaw_joint": 0.0,
+    "right_knee_joint": 0.0,
+    "right_ankle_pitch_joint": 0.0,
+    "right_ankle_roll_joint": 0.0,
+    "waist_yaw_joint": 0.0,
+    "waist_roll_joint": 0.0,
+    "torso_pitch_joint": 0.0,
+    "left_shoulder_pitch_joint": 0.0,
+    "left_shoulder_roll_joint": 0.0,
+    "left_shoulder_yaw_joint": 0.0,
+    "left_elbow_joint": 0.0,
+    "right_shoulder_pitch_joint": 0.0,
+    "right_shoulder_roll_joint": 0.0,
+    "right_shoulder_yaw_joint": 0.0,
+    "right_elbow_joint": 0.0
+  },
+  "joint_match": {
+    "pelvis": "pelvis",
+    "left_hip_roll_link": "left_hip",
+    "left_knee_link": "left_knee",
+    "left_ankle_roll_link": "left_ankle",
+    "right_hip_roll_link": "right_hip",
+    "right_knee_link": "right_knee",
+    "right_ankle_roll_link": "right_ankle",
+    "torso_link": "spine2",
+    "left_shoulder_yaw_link": "left_shoulder",
+    "left_elbow_link": "left_elbow",
+    "right_shoulder_yaw_link": "right_shoulder",
+    "right_elbow_link": "right_elbow"
+  }
+}

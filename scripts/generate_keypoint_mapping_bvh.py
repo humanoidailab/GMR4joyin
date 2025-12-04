@@ -134,12 +134,14 @@ if __name__ == "__main__":
 
     # 映射关节顺序
     nd_expected = len(joint_order)
+    print("[debug]:nd_expected ",nd_expected )
     vec = np.zeros(nd_expected, dtype=np.float32)
     assigned = 0
 
     for i, joint_name in enumerate(joint_order):
         if i < nd_expected and joint_name in fixed_dof_pos.keys():
             vec[i] = fixed_dof_pos[joint_name]
+            print("[INFO] 有效关节",joint_name)
             assigned += 1
     
     print(f"[INFO] 映射关节: {assigned}/{len(fixed_dof_pos)}")
@@ -151,8 +153,12 @@ if __name__ == "__main__":
         fixed_root_rot.astype(np.float64),
         fixed_dof_pos.astype(np.float64)
     ], axis=0)
+    print("debug",len(qpos_fk))
     centers, Rs = fk_solver.fk(qpos_fk)
-
+    print("[debuga]:body_names",fk_solver.body_names)
+    print("[debuga]:body_names_len",len(fk_solver.body_names))
+    print("[debug]:centers_len",len(centers))
+    
     # 优化缩放系数
     ratio = actual_human_height / ik_cfg_tmp["human_height_assumption"]
     optimized_scales = {}
@@ -224,6 +230,7 @@ if __name__ == "__main__":
         aligned_robot_centers, Rs, fk_solver.body_names, 
         ik_cfg_tmp, quat_offsets
     )
+    # print("=== 不计算位置偏移 ===")
 
     # 保存所有优化数据
     print("=== 保存优化配置 ===")

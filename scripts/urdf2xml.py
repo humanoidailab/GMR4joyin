@@ -16,8 +16,8 @@ import os
 import xml.etree.ElementTree as ET
 
 # ========= 用户路径配置 =========
-URDF_PATH = "/home/xgy/Downloads/GMR-master/assets/joyin_description/joyin_description/robot_human_23dof_scaled5.urdf"
-OUT_PATH  = "/home/xgy/Downloads/GMR-master/assets/joyin_description/joyin_description/robot_human_23dof_scaled51.xml"
+URDF_PATH = "/home/tt/GMR-master4joyin/GMR4joyin/urdfmaker/humanoid_final.urdf"
+OUT_PATH  = "/home/tt/GMR-master4joyin/GMR4joyin/assets/joyin_description/joyin_description/humanoid_final.xml"
 RAW_PATH  = OUT_PATH.replace(".xml", "_raw.xml")
 
 # ========= 核心逻辑 =========

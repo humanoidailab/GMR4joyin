@@ -293,13 +293,18 @@ def prepare_optimization_data(human_data, robot_centers, robot_link_indices, ik_
         for robot_link, config in ik_config[table_key].items():
             if not isinstance(config, list) or len(config) < 1:
                 continue
-                
+            
             human_bone_name = config[0]  # 对应的人体骨骼名称
             
             # 检查这个匹配对是否有效且需要优化
             if (robot_link in robot_link_indices and human_bone_name in scale_keys):
                 # 从FK结果中获取机器人连杆位置
                 robot_idx = robot_link_indices[robot_link]
+                print("[DEBUG]",robot_link_indices)
+                print("[DEBUG]",robot_link)
+                print("[DEBUG]",robot_idx)
+                print("[DEBUG]",robot_centers)
+                
                 robot_pos = robot_centers[robot_idx]
                 # 存储机器人目标位置
                 robot_positions[(robot_link, human_bone_name)] = robot_pos
