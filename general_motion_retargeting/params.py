@@ -23,7 +23,7 @@ ROBOT_XML_DICT = {
     "tienkung": ASSET_ROOT / "tienkung" / "mjcf" / "tienkung.xml",
     "pal_talos": ASSET_ROOT / "pal_talos" / "talos.xml",
     "joyin": ASSET_ROOT / "joyin_description" / "joyin_description" / "joyin.xml",
-    "joyin_human": ASSET_ROOT / "joyin_description" / "joyin_description" / "humanoid_final.xml",
+    "joyin_human": ASSET_ROOT / "joyin_description" / "joyin_description" / "humanoid_final1.xml",
 }
 
 IK_CONFIG_DICT = {
@@ -55,7 +55,7 @@ IK_CONFIG_DICT = {
         "engineai_pm01": IK_CONFIG_ROOT / "bvh_lafan1_to_pm01.json",
         "pal_talos": IK_CONFIG_ROOT / "bvh_to_talos.json",
         "joyin": IK_CONFIG_ROOT / "bvh_lafan1_to_joyin_r.json",
-        "joyin_human": IK_CONFIG_ROOT / "bvh_lafan1_to_joyin_human_final_auto.json",
+        "joyin_human": IK_CONFIG_ROOT / "bvh_lafan1_to_joyin_human2_auto.json",
     },
     "bvh_nokov":{
         "unitree_g1": IK_CONFIG_ROOT / "bvh_nokov_to_g1.json",
